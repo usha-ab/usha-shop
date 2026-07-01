@@ -58,6 +58,20 @@ visible text). Change once; the page, JSON-LD, and Stripe Checkout follow.
 Product photos are **placeholders** (`public/images/*.svg`). Replace with real
 1200×1200 shots — see `CHECKLIST.md`.
 
+## Deploy
+
+Connected to Vercel project **`usha-shop`** with GitHub auto-deploys:
+
+- Push to **`main`** → Production deploy
+- Any other branch / PR → Preview deploy
+
+Live preview: **https://usha-shop.vercel.app** (not the customer domain; no live
+payment keys yet). Manual deploy: `vercel deploy` (preview) / `vercel deploy --prod`.
+
+Env vars live in the Vercel project (Production): `NEXT_PUBLIC_SITE_URL`,
+`FULFILLMENT_NOTIFY_EMAIL`. The three Stripe secrets are added at go-live —
+see `CHECKLIST.md`.
+
 ## What's left before going live
 
 See **`CHECKLIST.md`** — supplier account, payment go-live, real photos, DNS.
