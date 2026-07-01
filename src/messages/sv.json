@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "siteName": "Usha Shop"
+  },
+  "nav": {
+    "home": "Hem",
+    "shop": "Butik",
+    "instagram": "Följ @usha.shop på Instagram"
+  },
+  "product": {
+    "name": "Usha Chest Rig — Utility-väska i PU-läder",
+    "tagline": "Allt du behöver, nära kroppen. Inget skräp i fickorna.",
+    "description": "Usha Chest Rig är den snygga lösningen på \"var lägger jag grejerna?\". En chest rig i mjukt PU-läder som bär telefon, plånbok, nycklar och powerbank – utan att du känner av det. Justerbar kryss-sele som sitter lika bra över en hoodie som en kavaj. Mindre stök. Mer stil.",
+    "featuresHeading": "Detta får du",
+    "features": [
+      "2 fickor + dragkedjefack för smart förvaring",
+      "Justerbar kryss-sele – passar de flesta kroppar",
+      "Mjukt, tåligt PU-läder (veganläder) med metalldragkedjor",
+      "Sitter stadigt när du rör dig – perfekt för stan, resan, festivalen",
+      "Levereras i en Usha-tygpåse"
+    ],
+    "includesHeading": "I lådan",
+    "includes": [
+      "Usha Chest Rig i vald färg",
+      "Usha-tygpåse (dust bag)"
+    ],
+    "specsHeading": "Specifikation",
+    "specs": {
+      "material": { "label": "Material", "value": "PU-läder (veganläder), metalldetaljer" },
+      "size": { "label": "Mått", "value": "ca 22 × 18 cm · selelängd justerbar upp till ~120 cm" },
+      "weight": { "label": "Vikt", "value": "ca 300 g" },
+      "fits": { "label": "Rymmer", "value": "Telefon upp till 6,7\", plånbok, nycklar, powerbank, pass" }
+    },
+    "materialNote": "Veganläder (PU) – inte äkta läder.",
+    "colorsLabel": "Färg",
+    "colorNames": { "brown": "Brun", "olive": "Oliv", "black": "Svart" },
+    "quantityLabel": "Antal",
+    "cta": "Lägg i varukorg",
+    "ctaLoading": "Öppnar kassan…",
+    "freeShipping": "Fri frakt över {threshold}",
+    "checkoutError": "Något gick fel med kassan. Försök igen.",
+    "seo": {
+      "title": "Usha Chest Rig – Utility-bröstväska i PU-läder | Usha Shop",
+      "description": "Snygg chest rig i PU-läder för telefon, plånbok & nycklar. Brun, oliv eller svart. Fri frakt över 600 kr. 14 dagars ångerrätt."
+    }
+  },
+  "shipping": {
+    "heading": "Frakt & retur",
+    "body": "Skickas inom 1–3 arbetsdagar. Leverans 5–9 arbetsdagar (EU-lager). 14 dagars ångerrätt enligt distansavtalslagen."
+  },
+  "reviews": {
+    "heading": "Vad kunder säger",
+    "placeholderNote": "Riktiga omdömen visas här när de första beställningarna kommit in.",
+    "items": [
+      { "name": "Kund", "rating": 5, "text": "Sitter perfekt över hoodien och rymmer allt jag brukar tappa bort. Snyggare än väntat." },
+      { "name": "Kund", "rating": 5, "text": "Bra kvalitet på lädret och dragkedjorna. Får många frågor om var jag köpt den." },
+      { "name": "Kund", "rating": 4, "text": "Precis lagom stor för festival – telefon, powerbank och nycklar utan att kännas i vägen." }
+    ]
+  },
+  "follow": {
+    "heading": "Följ @usha.shop",
+    "body": "Nya drops, styling och kampanjer – först på Instagram.",
+    "cta": "Följ oss"
+  },
+  "trust": {
+    "securePayment": "Säker betalning",
+    "freeReturns": "14 dagars ångerrätt",
+    "euWarehouse": "EU-lager"
+  },
+  "checkout": {
+    "successTitle": "Tack för din beställning!",
+    "successBody": "Vi har tagit emot din order och skickar en bekräftelse till din e-post. Du får en spårningslänk när paketet är på väg.",
+    "cancelTitle": "Köpet avbröts",
+    "cancelBody": "Ingen betalning genomfördes. Din varukorg finns kvar – du kan slutföra köpet när du vill.",
+    "backToProduct": "Tillbaka till produkten",
+    "continueShopping": "Fortsätt handla"
+  },
+  "footer": {
+    "companyLine": "Usha AB · Org.nr 559401-8326",
+    "contact": "Kontakt",
+    "rights": "Alla rättigheter förbehållna.",
+    "links": {
+      "terms": "Köpvillkor",
+      "privacy": "Integritetspolicy",
+      "returns": "Retur & ångerrätt",
+      "shipping": "Frakt"
+    }
+  },
+  "legal": {
+    "backToShop": "Tillbaka till butiken",
+    "terms": {
+      "title": "Köpvillkor",
+      "body": "Dessa köpvillkor gäller för köp i Usha Shop (shop.usha.se), som drivs av Usha AB (org.nr 559401-8326). Priser anges i SEK inklusive moms. Beställningen är bindande när betalningen bekräftats. Vi förbehåller oss rätten att neka eller avbryta en beställning vid uppenbara felaktigheter i pris eller lager. Betalning sker säkert via Stripe (kort, Klarna, Swish, Apple Pay, Google Pay). Kontakta oss på pablo.acosta@usha.se vid frågor om din order."
+    },
+    "privacy": {
+      "title": "Integritetspolicy",
+      "body": "Usha AB (org.nr 559401-8326) är personuppgiftsansvarig för de uppgifter du lämnar vid köp. Vi behandlar namn, adress, e-post och orderuppgifter för att fullgöra köpet, hantera frakt och uppfylla bokföringsskyldighet. Betalning hanteras av Stripe; kortuppgifter lagras aldrig hos oss. Orderuppgifter delas med vår fraktleverantör enbart för att leverera din vara. Du har rätt till registerutdrag, rättelse och radering enligt GDPR – mejla pablo.acosta@usha.se."
+    },
+    "returns": {
+      "title": "Retur & ångerrätt",
+      "body": "Du har 14 dagars ångerrätt enligt distansavtalslagen, räknat från den dag du tog emot varan. Meddela oss på pablo.acosta@usha.se innan du returnerar. Varan ska returneras i väsentligen oförändrat skick. Vi återbetalar köpet inklusive standardfrakt inom 14 dagar från att vi mottagit returen eller bevis på att den skickats. Du står för returfrakten. Ångerrätten påverkar inte dina rättigheter enligt konsumentköplagen vid fel på varan."
+    },
+    "shipping": {
+      "title": "Frakt",
+      "body": "Vi skickar inom 1–3 arbetsdagar från vårt EU-lager. Beräknad leveranstid är 5–9 arbetsdagar. Fri frakt vid köp över 600 kr, annars tillkommer en fast fraktavgift som visas i kassan. Du får en spårningslänk via e-post när ordern skickats."
+    }
+  }
+}

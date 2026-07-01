@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c8a445"/><stop offset="100%" stop-color="#ff6b35"/></linearGradient></defs>
+<rect width="1200" height="1200" fill="#0a0a0b"/>
+<rect x="24" y="24" width="1152" height="1152" rx="28" fill="#111113" stroke="#1f1f23" stroke-width="2"/>
+<circle cx="600" cy="530" r="120" fill="#141414" stroke="url(#g)" stroke-width="6"/>
+<path d="M554 480v52a46 46 0 0 0 92 0v-52" fill="none" stroke="url(#g)" stroke-width="16" stroke-linecap="round"/>
+<circle cx="658" cy="482" r="11" fill="#ff6b35"/>
+<text x="600" y="710" fill="#fafaf9" font-family="system-ui,sans-serif" font-size="52" font-weight="700" text-anchor="middle">Usha Chest Rig</text>
+<text x="600" y="770" fill="#8b8b8b" font-family="ui-monospace,monospace" font-size="30" text-anchor="middle">BLACK — placeholder</text>
+</svg>

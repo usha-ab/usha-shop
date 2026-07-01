@@ -1,0 +1,88 @@
+import type { ReactNode } from "react";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Outfit, JetBrains_Mono } from "next/font/google";
+import { routing } from "@/i18n/routing";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shop.usha.se";
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "product.seo" });
+  const meta = await getTranslations({ locale, namespace: "meta" });
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    icons: { icon: "https://usha.se/icon-512.png" },
+    title: {
+      default: t("title"),
+      template: `%s | ${meta("siteName")}`,
+    },
+    description: t("description"),
+    openGraph: {
+      type: "website",
+      siteName: meta("siteName"),
+      title: t("title"),
+      description: t("description"),
+      images: [{ url: "/images/og-cover.svg", width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: ["/images/og-cover.svg"],
+    },
+  };
+}
+
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+  setRequestLocale(locale);
+
+  return (
+    <html lang={locale} className={`${outfit.variable} ${jetbrainsMono.variable}`}>
+      <body className="min-h-screen bg-base font-sans text-text antialiased">
+        <NextIntlClientProvider>
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  );
+}

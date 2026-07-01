@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "siteName": "Usha Shop"
+  },
+  "nav": {
+    "home": "Inicio",
+    "shop": "Tienda",
+    "instagram": "Sigue a @usha.shop en Instagram"
+  },
+  "product": {
+    "name": "Usha Chest Rig — Bolso utilitario de piel PU",
+    "tagline": "Todo lo que necesitas, pegado al cuerpo. Sin cargar los bolsillos.",
+    "description": "El Usha Chest Rig es la respuesta elegante a \"¿dónde pongo mis cosas?\". Un chest rig de piel PU suave que lleva tu móvil, cartera, llaves y powerbank — sin que lo notes. Arnés cruzado ajustable que queda igual de bien sobre una sudadera que sobre un blazer. Menos desorden. Más estilo.",
+    "featuresHeading": "Qué incluye",
+    "features": [
+      "2 bolsillos + compartimento con cremallera para guardar con orden",
+      "Arnés cruzado ajustable — se adapta a la mayoría de cuerpos",
+      "Piel PU (vegana) suave y resistente con cremalleras metálicas",
+      "Se mantiene firme al moverte — para la ciudad, viajes y festivales",
+      "Llega en una bolsa de tela Usha"
+    ],
+    "includesHeading": "En la caja",
+    "includes": [
+      "Usha Chest Rig en el color elegido",
+      "Bolsa de tela Usha (dust bag)"
+    ],
+    "specsHeading": "Especificaciones",
+    "specs": {
+      "material": { "label": "Material", "value": "Piel PU (vegana), detalles metálicos" },
+      "size": { "label": "Medidas", "value": "aprox. 22 × 18 cm · arnés ajustable hasta ~120 cm" },
+      "weight": { "label": "Peso", "value": "aprox. 300 g" },
+      "fits": { "label": "Cabe", "value": "Móvil de hasta 6,7\", cartera, llaves, powerbank, pasaporte" }
+    },
+    "materialNote": "Piel vegana (PU) — no es piel auténtica.",
+    "colorsLabel": "Color",
+    "colorNames": { "brown": "Marrón", "olive": "Verde oliva", "black": "Negro" },
+    "quantityLabel": "Cantidad",
+    "cta": "Añadir al carrito",
+    "ctaLoading": "Abriendo el pago…",
+    "freeShipping": "Envío gratis a partir de {threshold}",
+    "checkoutError": "Algo salió mal en el pago. Inténtalo de nuevo.",
+    "seo": {
+      "title": "Usha Chest Rig – Bolso utilitario de piel PU | Usha Shop",
+      "description": "Chest rig de piel PU para móvil, cartera y llaves. Marrón, oliva o negro. Envío gratis desde €59. 14 días de devolución."
+    }
+  },
+  "shipping": {
+    "heading": "Envío y devoluciones",
+    "body": "Se envía en 1–3 días laborables. Entrega en 5–9 días laborables (almacén UE). 14 días de derecho de desistimiento."
+  },
+  "reviews": {
+    "heading": "Lo que dicen los clientes",
+    "placeholderNote": "Las reseñas reales aparecerán aquí cuando lleguen los primeros pedidos.",
+    "items": [
+      { "name": "Cliente", "rating": 5, "text": "Queda perfecto sobre la sudadera y cabe todo lo que suelo perder. Más bonito de lo que esperaba." },
+      { "name": "Cliente", "rating": 5, "text": "Muy buena calidad en la piel y las cremalleras. Siempre me preguntan dónde lo compré." },
+      { "name": "Cliente", "rating": 4, "text": "El tamaño justo para un festival — móvil, powerbank y llaves sin estorbar." }
+    ]
+  },
+  "follow": {
+    "heading": "Sigue a @usha.shop",
+    "body": "Nuevos drops, estilismo y campañas — primero en Instagram.",
+    "cta": "Síguenos"
+  },
+  "trust": {
+    "securePayment": "Pago seguro",
+    "freeReturns": "14 días de devolución",
+    "euWarehouse": "Almacén UE"
+  },
+  "checkout": {
+    "successTitle": "¡Gracias por tu pedido!",
+    "successBody": "Hemos recibido tu pedido y te enviamos una confirmación por correo. Recibirás un enlace de seguimiento cuando salga tu paquete.",
+    "cancelTitle": "Pago cancelado",
+    "cancelBody": "No se realizó ningún cargo. Tu selección sigue aquí — puedes completar la compra cuando quieras.",
+    "backToProduct": "Volver al producto",
+    "continueShopping": "Seguir comprando"
+  },
+  "footer": {
+    "companyLine": "Usha AB · N.º de reg. 559401-8326",
+    "contact": "Contacto",
+    "rights": "Todos los derechos reservados.",
+    "links": {
+      "terms": "Condiciones",
+      "privacy": "Privacidad",
+      "returns": "Devoluciones",
+      "shipping": "Envíos"
+    }
+  },
+  "legal": {
+    "backToShop": "Volver a la tienda",
+    "terms": {
+      "title": "Condiciones de compra",
+      "body": "Estas condiciones se aplican a las compras en Usha Shop (shop.usha.se), gestionada por Usha AB (n.º de reg. 559401-8326). Los precios se muestran con IVA incluido. El pedido es vinculante una vez confirmado el pago. Nos reservamos el derecho de rechazar o cancelar un pedido en caso de errores evidentes de precio o stock. El pago se procesa de forma segura a través de Stripe (tarjeta, Klarna, Swish, Apple Pay, Google Pay). Escríbenos a pablo.acosta@usha.se para cualquier duda sobre tu pedido."
+    },
+    "privacy": {
+      "title": "Política de privacidad",
+      "body": "Usha AB (n.º de reg. 559401-8326) es responsable del tratamiento de los datos que facilitas al comprar. Tratamos tu nombre, dirección, correo y datos del pedido para gestionar la compra, organizar el envío y cumplir las obligaciones contables. El pago lo gestiona Stripe; nunca almacenamos datos de tarjeta. Los datos del pedido se comparten con nuestro socio de logística únicamente para entregar tu artículo. Conforme al RGPD tienes derecho de acceso, rectificación y supresión — escribe a pablo.acosta@usha.se."
+    },
+    "returns": {
+      "title": "Devoluciones",
+      "body": "Dispones de 14 días de derecho de desistimiento según la normativa de venta a distancia de la UE, contados desde el día en que recibes el artículo. Avísanos en pablo.acosta@usha.se antes de devolver. El artículo debe devolverse esencialmente sin cambios. Reembolsamos la compra, incluido el envío estándar, en un plazo de 14 días desde que recibimos la devolución o la prueba de su envío. El coste del envío de devolución corre por tu cuenta. Esto no afecta a tus derechos legales si el artículo es defectuoso."
+    },
+    "shipping": {
+      "title": "Envíos",
+      "body": "Enviamos en 1–3 días laborables desde nuestro almacén de la UE. La entrega estimada es de 5–9 días laborables. Envío gratis en pedidos superiores a €59; en caso contrario se aplica una tarifa de envío fija que se muestra en el pago. Recibirás un enlace de seguimiento por correo cuando se envíe tu pedido."
+    }
+  }
+}

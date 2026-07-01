@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "siteName": "Usha Shop"
+  },
+  "nav": {
+    "home": "Home",
+    "shop": "Shop",
+    "instagram": "Follow @usha.shop on Instagram"
+  },
+  "product": {
+    "name": "Usha Chest Rig — PU Leather Utility Bag",
+    "tagline": "Everything you need, close to you. Nothing weighing down your pockets.",
+    "description": "The Usha Chest Rig is the clean answer to \"where do I put my stuff?\" A soft PU leather chest rig that carries your phone, wallet, keys and power bank — without you feeling it. An adjustable cross-strap that sits just as well over a hoodie as a blazer. Less clutter. More class.",
+    "featuresHeading": "What you get",
+    "features": [
+      "2 pockets + zip compartment for smart storage",
+      "Adjustable cross-strap — fits most body types",
+      "Soft, durable PU (vegan) leather with metal zippers",
+      "Stays put when you move — made for the city, travel, festivals",
+      "Arrives in an Usha dust bag"
+    ],
+    "includesHeading": "In the box",
+    "includes": [
+      "Usha Chest Rig in your chosen colour",
+      "Usha dust bag"
+    ],
+    "specsHeading": "Specs",
+    "specs": {
+      "material": { "label": "Material", "value": "PU (vegan) leather, metal hardware" },
+      "size": { "label": "Size", "value": "approx. 22 × 18 cm · strap adjustable up to ~120 cm" },
+      "weight": { "label": "Weight", "value": "approx. 300 g" },
+      "fits": { "label": "Fits", "value": "Phones up to 6.7\", wallet, keys, power bank, passport" }
+    },
+    "materialNote": "Vegan leather (PU) — not genuine leather.",
+    "colorsLabel": "Colour",
+    "colorNames": { "brown": "Brown", "olive": "Olive", "black": "Black" },
+    "quantityLabel": "Quantity",
+    "cta": "Add to cart",
+    "ctaLoading": "Opening checkout…",
+    "freeShipping": "Free shipping over {threshold}",
+    "checkoutError": "Something went wrong at checkout. Please try again.",
+    "seo": {
+      "title": "Usha Chest Rig – PU Leather Utility Bag | Usha Shop",
+      "description": "Clean PU leather chest rig for phone, wallet & keys. Brown, olive or black. Free shipping over €59. 14-day returns."
+    }
+  },
+  "shipping": {
+    "heading": "Shipping & returns",
+    "body": "Ships within 1–3 business days. Delivery 5–9 business days (EU warehouse). 14-day return right."
+  },
+  "reviews": {
+    "heading": "What customers say",
+    "placeholderNote": "Real reviews will appear here once the first orders land.",
+    "items": [
+      { "name": "Customer", "rating": 5, "text": "Sits perfectly over a hoodie and holds everything I usually lose. Better looking than I expected." },
+      { "name": "Customer", "rating": 5, "text": "Great quality on the leather and the zippers. I get asked where I got it all the time." },
+      { "name": "Customer", "rating": 4, "text": "Just the right size for a festival — phone, power bank and keys without getting in the way." }
+    ]
+  },
+  "follow": {
+    "heading": "Follow @usha.shop",
+    "body": "New drops, styling and campaigns — first on Instagram.",
+    "cta": "Follow us"
+  },
+  "trust": {
+    "securePayment": "Secure payment",
+    "freeReturns": "14-day returns",
+    "euWarehouse": "EU warehouse"
+  },
+  "checkout": {
+    "successTitle": "Thank you for your order!",
+    "successBody": "We've received your order and a confirmation is on its way to your email. You'll get a tracking link once your parcel ships.",
+    "cancelTitle": "Checkout cancelled",
+    "cancelBody": "No payment was taken. Your selection is still here — you can complete the purchase whenever you like.",
+    "backToProduct": "Back to the product",
+    "continueShopping": "Continue shopping"
+  },
+  "footer": {
+    "companyLine": "Usha AB · Reg. no. 559401-8326",
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "links": {
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "returns": "Returns & refunds",
+      "shipping": "Shipping"
+    }
+  },
+  "legal": {
+    "backToShop": "Back to the shop",
+    "terms": {
+      "title": "Terms of purchase",
+      "body": "These terms apply to purchases from Usha Shop (shop.usha.se), operated by Usha AB (reg. no. 559401-8326). Prices are shown including VAT. Your order is binding once payment is confirmed. We reserve the right to decline or cancel an order in the event of obvious pricing or stock errors. Payment is handled securely by Stripe (card, Klarna, Swish, Apple Pay, Google Pay). Contact us at pablo.acosta@usha.se with any questions about your order."
+    },
+    "privacy": {
+      "title": "Privacy policy",
+      "body": "Usha AB (reg. no. 559401-8326) is the data controller for the information you provide when ordering. We process your name, address, email and order details to fulfil the purchase, arrange shipping and meet bookkeeping obligations. Payment is handled by Stripe; card details are never stored by us. Order details are shared with our fulfilment partner solely to deliver your item. Under the GDPR you have the right to access, correct and erase your data — email pablo.acosta@usha.se."
+    },
+    "returns": {
+      "title": "Returns & refunds",
+      "body": "You have a 14-day right of withdrawal under EU distance-selling rules, counted from the day you receive the item. Notify us at pablo.acosta@usha.se before returning. The item must be returned in essentially unchanged condition. We refund the purchase including standard shipping within 14 days of receiving the return or proof that it has been sent. You cover the cost of return shipping. This does not affect your statutory rights if the item is faulty."
+    },
+    "shipping": {
+      "title": "Shipping",
+      "body": "We ship within 1–3 business days from our EU warehouse. Estimated delivery is 5–9 business days. Free shipping on orders over €59; otherwise a flat shipping fee applies, shown at checkout. You receive a tracking link by email once your order ships."
+    }
+  }
+}
