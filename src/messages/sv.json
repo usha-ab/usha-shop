@@ -39,6 +39,9 @@
     "ctaLoading": "Öppnar kassan…",
     "freeShipping": "Fri frakt över {threshold}",
     "checkoutError": "Något gick fel med kassan. Försök igen.",
+    "trustSecure": "Säker betalning",
+    "trustShipping": "Snabb leverans (EU-lager)",
+    "trustReturns": "14 dagars ångerrätt",
     "seo": {
       "title": "Usha Chest Rig – Utility-bröstväska i PU-läder | Usha Shop",
       "description": "Snygg chest rig i PU-läder för telefon, plånbok & nycklar. Brun, oliv eller svart. Fri frakt över 600 kr. 14 dagars ångerrätt."

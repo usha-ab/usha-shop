@@ -39,6 +39,9 @@
     "ctaLoading": "Opening checkout…",
     "freeShipping": "Free shipping over {threshold}",
     "checkoutError": "Something went wrong at checkout. Please try again.",
+    "trustSecure": "Secure payment",
+    "trustShipping": "Fast EU shipping",
+    "trustReturns": "14-day returns",
     "seo": {
       "title": "Usha Chest Rig – PU Leather Utility Bag | Usha Shop",
       "description": "Clean PU leather chest rig for phone, wallet & keys. Brown, olive or black. Free shipping over €59. 14-day returns."

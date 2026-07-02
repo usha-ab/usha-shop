@@ -6,7 +6,7 @@ import { ProductHero } from "@/components/ProductHero";
 import { Accordion } from "@/components/Accordion";
 import { Reviews } from "@/components/Reviews";
 import { FollowInstagram } from "@/components/FollowInstagram";
-import { CheckIcon, ShieldIcon, ReturnIcon, TruckIcon } from "@/components/icons";
+import { CheckIcon } from "@/components/icons";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -38,25 +38,6 @@ function ProductJsonLd({ locale }: { locale: string }) {
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
-  );
-}
-
-function TrustRow() {
-  const t = useTranslations("trust");
-  const items = [
-    { icon: ShieldIcon, label: t("securePayment") },
-    { icon: ReturnIcon, label: t("freeReturns") },
-    { icon: TruckIcon, label: t("euWarehouse") },
-  ];
-  return (
-    <div className="mt-10 grid grid-cols-3 gap-3 border-y border-border py-5">
-      {items.map(({ icon: Icon, label }) => (
-        <div key={label} className="flex flex-col items-center gap-2 text-center sm:flex-row sm:justify-center">
-          <Icon className="h-5 w-5 text-gold" />
-          <span className="text-xs text-muted sm:text-sm">{label}</span>
-        </div>
-      ))}
-    </div>
   );
 }
 
@@ -149,8 +130,7 @@ export default async function ProductPage({
           priceDisplay={price.display}
           freeShippingDisplay={price.freeShippingDisplay}
         />
-        <TrustRow />
-        <div className="mt-14 space-y-14 pb-4">
+        <div className="mt-16 space-y-14 pb-4">
           <Features />
           <Specs />
           <ShippingAccordion />
