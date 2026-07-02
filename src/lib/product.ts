@@ -29,15 +29,16 @@ export const PRODUCT = {
   /** Brand for JSON-LD. */
   brand: "Usha",
   colors: [
-    { id: "brown", swatch: "#6b4a2b", image: "/images/chest-rig-brown.svg", cjVid: "" },
+    // brown/black = real supplier photos (interim, from the AliExpress source
+    // listing); olive has no source shot yet → branded placeholder until CJ.
+    { id: "brown", swatch: "#6b4a2b", image: "/images/chest-rig-brown.jpg", cjVid: "" },
     { id: "olive", swatch: "#4b5320", image: "/images/chest-rig-olive.svg", cjVid: "" },
-    { id: "black", swatch: "#141414", image: "/images/chest-rig-black.svg", cjVid: "" },
+    { id: "black", swatch: "#141414", image: "/images/chest-rig-black.jpg", cjVid: "" },
   ] as ProductColor[],
-  /** Gallery shots shared across colors (detail / worn / packaging). */
+  /** Gallery shots shared across colors (detail / worn). */
   gallery: [
-    "/images/chest-rig-detail.svg",
-    "/images/chest-rig-worn.svg",
-    "/images/chest-rig-dustbag.svg",
+    "/images/chest-rig-detail.jpg",
+    "/images/chest-rig-worn.jpg",
   ],
 } as const;
 
