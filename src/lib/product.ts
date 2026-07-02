@@ -29,10 +29,11 @@ export const PRODUCT = {
   /** Brand for JSON-LD. */
   brand: "Usha",
   colors: [
-    // brown/black = real supplier photos (interim, from the AliExpress source
-    // listing); olive has no source shot yet → branded placeholder until CJ.
+    // black/brown = real supplier photos (interim, from the AliExpress source
+    // listing); olive is the black shot recoloured to olive (duotone) so it
+    // matches the framing until CJ's real olive photo lands.
     { id: "brown", swatch: "#6b4a2b", image: "/images/chest-rig-brown.jpg", cjVid: "" },
-    { id: "olive", swatch: "#4b5320", image: "/images/chest-rig-olive.svg", cjVid: "" },
+    { id: "olive", swatch: "#4b5320", image: "/images/chest-rig-olive.jpg", cjVid: "" },
     { id: "black", swatch: "#141414", image: "/images/chest-rig-black.jpg", cjVid: "" },
   ] as ProductColor[],
   /** Gallery shots shared across colors (detail / worn). */
