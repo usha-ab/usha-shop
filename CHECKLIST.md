@@ -25,18 +25,34 @@ The page is built and deployable. These are the **manual steps only you can do**
 - [ ] Test end-to-end with a real card in **test mode** first (test keys), then
       flip to live keys.
 
-## 2. Fulfilment (dropshipping) — required to actually ship
+## 2. Fulfilment — CJdropshipping (chosen supplier)
 
-Currently a **stub**: `src/app/api/webhook/route.ts → forwardToSupplier()` only
-logs paid orders. Nothing ships automatically yet.
+The webhook (`src/app/api/webhook/route.ts` → `forwardToSupplier()`) already has
+a **real CJ integration** (`src/lib/cj.ts`). It activates once the env vars +
+per-colour variant ids are set; until then it logs each paid order.
 
-- [ ] Create the supplier account (CJdropshipping **or** AliExpress + DSers) and
-      import the exact chest-rig listing.
-- [ ] Confirm the real **specs** against that listing and update
+Reference source listing (AliExpress Choice, 4.9★, 700+ sold, EU shipping):
+`https://www.aliexpress.com/item/1005011587329202.html`
+
+- [ ] Create a free **CJdropshipping** account (cjdropshipping.com).
+- [ ] **Source Products** → paste the AliExpress URL above. CJ sources it,
+      warehouses it (pick the **EU/DE warehouse** for 3–5 day Sweden delivery),
+      and gives you reseller-licensed photos + per-colour **variant ids (VID)**.
+- [ ] Optionally request custom **Usha dust-bag** branding (matches the copy).
+- [ ] Put each colour's VID into `src/lib/product.ts` → `colors[].cjVid`.
+- [ ] CJ → Authorization → **API**: create an API key. Add to Vercel Production:
+      ```
+      printf "%s" "you@usha.se"      | vercel env add CJ_API_EMAIL production
+      printf "%s" "cj_api_key_xxx"   | vercel env add CJ_API_KEY production
+      printf "%s" "DE"               | vercel env add CJ_FROM_COUNTRY production   # optional
+      printf "%s" "CJPacket Ordinary"| vercel env add CJ_LOGISTIC_NAME production  # optional
+      ```
+- [ ] Confirm the real **specs** against the CJ listing and update
       `src/messages/*.json` (size/weight are marked *approx.* / *[verify]*).
-- [ ] Wire `forwardToSupplier()` to the supplier's order API (or DSers), or —
-      as an interim — connect `FULFILLMENT_NOTIFY_EMAIL` to an email service so
-      you fulfil manually. Until then, orders are in the Vercel function logs.
+- [ ] Place one live test order end-to-end and confirm it appears in CJ.
+
+Send me the CJ **VIDs per colour** + **licensed image URLs** and I'll wire them
+in (photos + Canva OG) and confirm the fulfilment path.
 
 ## 3. Product photos — replace placeholders
 

@@ -14,6 +14,12 @@ export interface ProductColor {
   swatch: string;
   /** Hero image for this color (drop real photos into /public/images). */
   image: string;
+  /**
+   * CJdropshipping variant id (VID) for this colour. Filled in after you
+   * source the product in CJ — the fulfilment webhook orders by this id.
+   * Empty until then (fulfilment falls back to logging).
+   */
+  cjVid: string;
 }
 
 export const PRODUCT = {
@@ -23,9 +29,9 @@ export const PRODUCT = {
   /** Brand for JSON-LD. */
   brand: "Usha",
   colors: [
-    { id: "brown", swatch: "#6b4a2b", image: "/images/chest-rig-brown.svg" },
-    { id: "olive", swatch: "#4b5320", image: "/images/chest-rig-olive.svg" },
-    { id: "black", swatch: "#141414", image: "/images/chest-rig-black.svg" },
+    { id: "brown", swatch: "#6b4a2b", image: "/images/chest-rig-brown.svg", cjVid: "" },
+    { id: "olive", swatch: "#4b5320", image: "/images/chest-rig-olive.svg", cjVid: "" },
+    { id: "black", swatch: "#141414", image: "/images/chest-rig-black.svg", cjVid: "" },
   ] as ProductColor[],
   /** Gallery shots shared across colors (detail / worn / packaging). */
   gallery: [
@@ -70,6 +76,11 @@ export const PRICING: Record<Currency, PriceInfo> = {
     freeShippingDisplay: "€59",
   },
 };
+
+/** CJ variant id for a colour, or "" if not sourced/mapped yet. */
+export function cjVidForColor(colorId: string): string {
+  return PRODUCT.colors.find((c) => c.id === colorId)?.cjVid ?? "";
+}
 
 /** Swedish shoppers pay in SEK; English/Spanish default to EUR. */
 export function currencyForLocale(locale: Locale): Currency {

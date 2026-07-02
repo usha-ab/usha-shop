@@ -72,6 +72,8 @@ export async function POST(req: Request) {
         },
       ],
       shipping_address_collection: { allowed_countries: [...SHIP_TO] },
+      // CJdropshipping requires a phone number for the shipping label.
+      phone_number_collection: { enabled: true },
       shipping_options: [
         {
           shipping_rate_data: {

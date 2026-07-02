@@ -1,19 +1,18 @@
 import { NextResponse } from "next/server";
 import type Stripe from "stripe";
 import { getStripe } from "@/lib/stripe";
+import { cjVidForColor } from "@/lib/product";
+import { isCjConfigured, createCjOrder, type CjShippingAddress } from "@/lib/cj";
 
 export const runtime = "nodejs";
 
 // ---------------------------------------------------------------------------
-// Stripe → fulfilment webhook (STUB).
+// Stripe → CJdropshipping fulfilment webhook.
 //
-// This verifies the Stripe signature and, on a paid order, assembles the
-// shipping payload we will forward to the dropshipping supplier
-// (CJdropshipping / DSers) once that account is connected at go-live.
-//
-// TODO(go-live): replace `forwardToSupplier()` with a real API call to the
-// chosen supplier. Until then it logs the order and (optionally) you can wire
-// FULFILLMENT_NOTIFY_EMAIL to an email service. See CHECKLIST.md.
+// On a paid order it extracts the shipping address from the Checkout Session
+// and places the order with CJ (when configured). Until CJ_API_* env vars +
+// the per-colour CJ variant ids (product.ts → cjVid) are set, it falls back to
+// logging the order so nothing is lost. See CHECKLIST.md.
 // ---------------------------------------------------------------------------
 
 interface FulfillmentOrder {
@@ -23,15 +22,69 @@ interface FulfillmentOrder {
   quantity: number;
   amountTotal: number | null;
   currency: string | null;
-  email: string | null;
-  /** Buyer + shipping address as collected by Stripe Checkout. */
-  shipping: unknown;
+  shipping: CjShippingAddress | null;
+}
+
+/** Normalise the Stripe Checkout shipping/customer data into a CJ address. */
+function extractShipping(session: Stripe.Checkout.Session): CjShippingAddress | null {
+  // Address lives under collected_information.shipping_details in recent API
+  // versions; older ones expose session.shipping_details.
+  const details =
+    (session as unknown as { collected_information?: { shipping_details?: unknown } })
+      .collected_information?.shipping_details ??
+    (session as unknown as { shipping_details?: unknown }).shipping_details;
+
+  const d = details as
+    | { name?: string; address?: Stripe.Address }
+    | undefined;
+  const addr = d?.address;
+  if (!addr?.country || !addr.line1) return null;
+
+  const countryName =
+    (() => {
+      try {
+        return new Intl.DisplayNames(["en"], { type: "region" }).of(addr.country) ?? addr.country;
+      } catch {
+        return addr.country;
+      }
+    })();
+
+  return {
+    name: d?.name ?? session.customer_details?.name ?? "",
+    phone: session.customer_details?.phone ?? "",
+    countryCode: addr.country,
+    country: countryName,
+    // Sweden and most EU countries have no state; CJ still wants a province.
+    province: addr.state || addr.city || "",
+    city: addr.city ?? "",
+    address: addr.line1,
+    address2: addr.line2 ?? "",
+    zip: addr.postal_code ?? "",
+  };
 }
 
 async function forwardToSupplier(order: FulfillmentOrder): Promise<void> {
-  // STUB: no real supplier connected yet. Log the full order so it can be
-  // fulfilled manually / replayed once the supplier API is wired in.
-  console.log("[fulfillment] order ready to forward:", JSON.stringify(order));
+  // Always log for an audit trail / manual replay.
+  console.log("[fulfillment] paid order:", JSON.stringify(order));
+
+  const cjVid = cjVidForColor(order.color);
+
+  if (!isCjConfigured() || !cjVid || !order.shipping) {
+    console.log(
+      `[fulfillment] CJ not placed (configured=${isCjConfigured()}, cjVid=${Boolean(
+        cjVid,
+      )}, shipping=${Boolean(order.shipping)}) — logged only.`,
+    );
+    return;
+  }
+
+  const { cjOrderId } = await createCjOrder({
+    orderNumber: order.stripeSessionId,
+    vid: cjVid,
+    quantity: order.quantity,
+    shipping: order.shipping,
+  });
+  console.log(`[fulfillment] CJ order created: ${cjOrderId}`);
 }
 
 export async function POST(req: Request) {
@@ -60,7 +113,6 @@ export async function POST(req: Request) {
   if (event.type === "checkout.session.completed") {
     const session = event.data.object as Stripe.Checkout.Session;
 
-    // Only fulfil when actually paid.
     if (session.payment_status === "paid") {
       const order: FulfillmentOrder = {
         stripeSessionId: session.id,
@@ -69,13 +121,7 @@ export async function POST(req: Request) {
         quantity: Number(session.metadata?.quantity ?? "1"),
         amountTotal: session.amount_total,
         currency: session.currency,
-        email: session.customer_details?.email ?? null,
-        // Address lives under collected_information in recent API versions,
-        // with customer_details as a fallback for older ones.
-        shipping:
-          (session as unknown as { collected_information?: unknown }).collected_information ??
-          session.customer_details ??
-          null,
+        shipping: extractShipping(session),
       };
 
       try {
