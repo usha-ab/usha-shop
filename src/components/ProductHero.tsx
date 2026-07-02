@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import type { ColorId, ProductColor } from "@/lib/product";
 import { CheckIcon, ShieldIcon, TruckIcon, ReturnIcon } from "./icons";
@@ -21,6 +21,21 @@ export function ProductHero({ colors, gallery, priceDisplay, freeShippingDisplay
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Mobile sticky bar: show once the main CTA has scrolled out of view.
+  const ctaRef = useRef<HTMLButtonElement>(null);
+  const [showStickyBar, setShowStickyBar] = useState(false);
+
+  useEffect(() => {
+    const el = ctaRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setShowStickyBar(!entry.isIntersecting),
+      { rootMargin: "0px 0px -80px 0px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const selectColor = (c: ProductColor) => {
     setColor(c.id);
@@ -48,6 +63,7 @@ export function ProductHero({ colors, gallery, priceDisplay, freeShippingDisplay
   }
 
   return (
+    <>
     <div className="grid gap-8 md:grid-cols-2 md:items-start md:gap-10 lg:gap-12">
       {/* Gallery — white studio card so the product reads as a clean shot */}
       <div className="mx-auto w-full max-w-md md:mx-0 md:max-w-none md:sticky md:top-24">
@@ -151,6 +167,7 @@ export function ProductHero({ colors, gallery, priceDisplay, freeShippingDisplay
             </button>
           </div>
           <button
+            ref={ctaRef}
             type="button"
             onClick={checkout}
             disabled={loading}
@@ -183,5 +200,28 @@ export function ProductHero({ colors, gallery, priceDisplay, freeShippingDisplay
         <p className="mt-4 font-mono text-[11px] text-muted">{t("materialNote")}</p>
       </div>
     </div>
+
+    {/* Mobile sticky add-to-cart bar */}
+    <div
+      className={`fixed inset-x-0 bottom-0 z-40 border-t border-border bg-base/95 px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] backdrop-blur transition-transform duration-300 md:hidden ${
+        showStickyBar ? "translate-y-0" : "translate-y-full"
+      }`}
+    >
+      <div className="flex items-center gap-3">
+        <div className="min-w-0">
+          <div className="truncate text-[11px] text-muted">{t(`colorNames.${color}`)}</div>
+          <div className="font-semibold leading-tight text-gradient">{priceDisplay}</div>
+        </div>
+        <button
+          type="button"
+          onClick={checkout}
+          disabled={loading}
+          className="ml-auto min-w-[55%] rounded-xl bg-usha-gradient px-5 py-3 text-sm font-semibold text-[#0a0a0b] transition-opacity hover:opacity-90 disabled:opacity-60"
+        >
+          {loading ? t("ctaLoading") : t("cta")}
+        </button>
+      </div>
+    </div>
+    </>
   );
 }
