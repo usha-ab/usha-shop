@@ -48,9 +48,9 @@ export function ProductHero({ colors, gallery, priceDisplay, freeShippingDisplay
   }
 
   return (
-    <div className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-12">
+    <div className="grid gap-8 md:grid-cols-2 md:items-start md:gap-10 lg:gap-12">
       {/* Gallery — white studio card so the product reads as a clean shot */}
-      <div className="mx-auto w-full max-w-md lg:mx-0 lg:max-w-none lg:sticky lg:top-24">
+      <div className="mx-auto w-full max-w-md md:mx-0 md:max-w-none md:sticky md:top-24">
         <div className="overflow-hidden rounded-2xl border border-border bg-white">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -74,14 +74,14 @@ export function ProductHero({ colors, gallery, priceDisplay, freeShippingDisplay
               aria-label={t("name")}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt="" className="aspect-square w-full object-contain p-1.5" loading="lazy" />
+              <img src={src} alt="" className="aspect-square w-full object-contain p-1.5" loading="eager" />
             </button>
           ))}
         </div>
       </div>
 
       {/* Buy box */}
-      <div className="lg:pt-1">
+      <div className="md:pt-1">
         <h1 className="text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
           {t("name")}
         </h1>
