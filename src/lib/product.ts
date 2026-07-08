@@ -36,10 +36,13 @@ export const PRODUCT = {
     { id: "olive", swatch: "#4b5320", image: "/images/chest-rig-olive.jpg", cjVid: "" },
     { id: "black", swatch: "#141414", image: "/images/chest-rig-black.jpg", cjVid: "" },
   ] as ProductColor[],
-  /** Gallery shots shared across colors (detail / worn). */
+  /**
+   * Gallery shots shared across colours. gallery[0] is the lifestyle hero —
+   * shown first / by default; the rest follow the colour shots in the strip.
+   */
   gallery: [
-    "/images/chest-rig-detail.jpg",
     "/images/chest-rig-worn.jpg",
+    "/images/chest-rig-detail.jpg",
   ],
 } as const;
 

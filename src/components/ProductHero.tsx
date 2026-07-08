@@ -17,7 +17,8 @@ export function ProductHero({ colors, gallery, priceDisplay, freeShippingDisplay
   const locale = useLocale();
 
   const [color, setColor] = useState<ColorId>(colors[0].id);
-  const [activeImage, setActiveImage] = useState<string>(colors[0].image);
+  // Default hero = the lifestyle shot (gallery[0]); colour shots load on select.
+  const [activeImage, setActiveImage] = useState<string>(gallery[0] ?? colors[0].image);
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -42,7 +43,8 @@ export function ProductHero({ colors, gallery, priceDisplay, freeShippingDisplay
     setActiveImage(c.image);
   };
 
-  const thumbnails = [...colors.map((c) => c.image), ...gallery];
+  // Strip order: lifestyle hero first, then the colour shots, then extra shots.
+  const thumbnails = [gallery[0], ...colors.map((c) => c.image), ...gallery.slice(1)];
 
   async function checkout() {
     setLoading(true);
@@ -72,7 +74,7 @@ export function ProductHero({ colors, gallery, priceDisplay, freeShippingDisplay
           <img
             src={activeImage}
             alt={t("name")}
-            className="aspect-square w-full object-contain p-6 sm:p-8"
+            className="aspect-square w-full object-cover"
             loading="eager"
           />
         </div>
@@ -90,7 +92,7 @@ export function ProductHero({ colors, gallery, priceDisplay, freeShippingDisplay
               aria-label={t("name")}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt="" className="aspect-square w-full object-contain p-1.5" loading="eager" />
+              <img src={src} alt="" className="aspect-square w-full object-cover" loading="eager" />
             </button>
           ))}
         </div>
