@@ -55,7 +55,7 @@ interface PriceInfo {
   freeShippingThreshold: number;
   /** Flat shipping charged below the threshold, in minor units. */
   shippingFee: number;
-  /** Human display, e.g. "449 kr" / "€39". */
+  /** Human display, e.g. "399 kr" / "€35". */
   display: string;
   freeShippingDisplay: string;
 }
@@ -63,18 +63,18 @@ interface PriceInfo {
 export const PRICING: Record<Currency, PriceInfo> = {
   sek: {
     currency: "sek",
-    unitAmount: 44900, // 449 kr
+    unitAmount: 39900, // 399 kr
     freeShippingThreshold: 60000, // 600 kr
     shippingFee: 4900, // 49 kr flat under threshold
-    display: "449 kr",
+    display: "399 kr",
     freeShippingDisplay: "600 kr",
   },
   eur: {
     currency: "eur",
-    unitAmount: 3900, // €39
+    unitAmount: 3500, // €35 (≈ 399 kr)
     freeShippingThreshold: 5900, // €59
     shippingFee: 490, // €4.90 flat under threshold
-    display: "€39",
+    display: "€35",
     freeShippingDisplay: "€59",
   },
 };
