@@ -10,7 +10,7 @@ export function FollowInstagram() {
     <section className="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
       <div className="overflow-hidden rounded-xl2 border border-border bg-card p-8 text-center sm:p-12">
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-usha-gradient">
-          <InstagramIcon className="h-7 w-7 text-base" />
+          <InstagramIcon className="h-7 w-7 text-[#0a0a0b]" />
         </div>
         <h2 className="mt-5 text-2xl font-semibold tracking-tight">{t("heading")}</h2>
         <p className="mx-auto mt-2 max-w-md text-sm text-muted">{t("body")}</p>
@@ -18,7 +18,7 @@ export function FollowInstagram() {
           href={INSTAGRAM_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 inline-flex items-center gap-2 rounded-xl border border-gold px-6 py-3 text-sm font-semibold text-gold transition-colors hover:bg-gold hover:text-base"
+          className="mt-6 inline-flex items-center gap-2 rounded-xl border border-gold px-6 py-3 text-sm font-semibold text-gold transition-colors hover:bg-gold hover:text-[#0a0a0b]"
         >
           <InstagramIcon className="h-4 w-4" />
           {t("cta")} · @usha.shop

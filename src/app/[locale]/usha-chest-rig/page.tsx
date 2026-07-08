@@ -51,7 +51,7 @@ function Features() {
         {features.map((f, i) => (
           <li key={i} className="flex items-start gap-3">
             <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-usha-gradient">
-              <CheckIcon className="h-3 w-3 text-base" />
+              <CheckIcon className="h-3 w-3 text-[#0a0a0b]" />
             </span>
             <span className="text-sm leading-relaxed text-text">{f}</span>
           </li>

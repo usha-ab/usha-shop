@@ -17,7 +17,7 @@ export default async function CancelPage({
       <p className="mt-3 leading-relaxed text-muted">{t("cancelBody")}</p>
       <Link
         href={`/${PRODUCT.slug}`}
-        className="mt-8 rounded-xl bg-usha-gradient px-6 py-3 text-sm font-semibold text-base"
+        className="mt-8 rounded-xl bg-usha-gradient px-6 py-3 text-sm font-semibold text-[#0a0a0b]"
       >
         {t("backToProduct")}
       </Link>

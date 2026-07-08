@@ -6,16 +6,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        base: "#0a0a0b",
-        card: "#111113",
-        border: "#1f1f23",
-        text: "#fafaf9",
-        muted: "#8b8b8b",
+        // Theme-driven tokens — values live as RGB channels in globals.css
+        // (:root = dark default, .light = light override). rgb(var/<alpha>)
+        // keeps Tailwind opacity modifiers (bg-base/80 etc.) working.
+        base: "rgb(var(--c-base) / <alpha-value>)",
+        card: "rgb(var(--c-card) / <alpha-value>)",
+        border: "rgb(var(--c-border) / <alpha-value>)",
+        text: "rgb(var(--c-text) / <alpha-value>)",
+        muted: "rgb(var(--c-muted) / <alpha-value>)",
         gold: {
-          DEFAULT: "#c8a445",
-          light: "#e8d48b",
+          DEFAULT: "rgb(var(--c-gold) / <alpha-value>)",
+          light: "rgb(var(--c-gold-light) / <alpha-value>)",
         },
-        coral: "#ff6b35",
+        coral: "rgb(var(--c-coral) / <alpha-value>)",
       },
       fontFamily: {
         sans: ["var(--font-outfit)", "system-ui", "sans-serif"],

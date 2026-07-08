@@ -103,7 +103,7 @@ export function ProductHero({ colors, gallery, priceDisplay, freeShippingDisplay
         <h1 className="text-2xl font-semibold leading-tight tracking-tight sm:text-3xl lg:text-4xl">
           {t("name")}
         </h1>
-        <p className="mt-3 text-base leading-relaxed text-muted sm:text-lg">{t("tagline")}</p>
+        <p className="mt-3 text-[1rem] leading-relaxed text-muted sm:text-lg">{t("tagline")}</p>
 
         <div className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
           <span className="text-3xl font-bold text-gradient sm:text-4xl">{priceDisplay}</span>

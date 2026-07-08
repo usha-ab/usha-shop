@@ -30,7 +30,7 @@ export function LanguageSwitcher() {
             }
             className={
               active
-                ? "rounded-md bg-usha-gradient px-2 py-1 font-semibold text-base"
+                ? "rounded-md bg-usha-gradient px-2 py-1 font-semibold text-[#0a0a0b]"
                 : "rounded-md px-2 py-1 text-muted transition-colors hover:text-text"
             }
             aria-current={active ? "true" : undefined}

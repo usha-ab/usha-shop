@@ -15,7 +15,7 @@ export default async function SuccessPage({
   return (
     <div className="mx-auto flex max-w-lg flex-col items-center px-4 py-24 text-center sm:px-6">
       <div className="flex h-16 w-16 items-center justify-center rounded-full bg-usha-gradient">
-        <CheckIcon className="h-8 w-8 text-base" />
+        <CheckIcon className="h-8 w-8 text-[#0a0a0b]" />
       </div>
       <h1 className="mt-6 text-3xl font-semibold tracking-tight">{t("successTitle")}</h1>
       <p className="mt-3 leading-relaxed text-muted">{t("successBody")}</p>

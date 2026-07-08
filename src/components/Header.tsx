@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { Logo } from "./Logo";
 import { InstagramIcon } from "./icons";
 import { LanguageSwitcher } from "./LanguageSwitcher";
+import { ThemeToggle } from "./ThemeToggle";
 
 const INSTAGRAM_URL = "https://instagram.com/usha.shop";
 
@@ -29,6 +30,7 @@ export function Header() {
           >
             <InstagramIcon className="h-5 w-5" />
           </a>
+          <ThemeToggle />
           <LanguageSwitcher />
         </div>
       </div>

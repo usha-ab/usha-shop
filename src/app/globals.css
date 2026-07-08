@@ -2,8 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme tokens as RGB channels. :root = dark (default); .light overrides.
+   Toggled by adding/removing the `light` class on <html>. */
 :root {
+  --c-base: 10 10 11;
+  --c-card: 17 17 19;
+  --c-border: 31 31 35;
+  --c-text: 250 250 249;
+  --c-muted: 139 139 139;
+  --c-gold: 200 164 69;
+  --c-gold-light: 232 212 139;
+  --c-coral: 255 107 53;
   color-scheme: dark;
+}
+
+.light {
+  --c-base: 255 255 255;
+  --c-card: 244 244 242;
+  --c-border: 226 226 223;
+  --c-text: 20 20 22;
+  --c-muted: 92 92 97;
+  --c-gold: 166 130 44; /* deeper gold for contrast on white */
+  --c-gold-light: 200 164 69;
+  --c-coral: 226 80 36; /* deeper coral for contrast on white */
+  color-scheme: light;
 }
 
 html {
@@ -11,8 +33,8 @@ html {
 }
 
 body {
-  background-color: #0a0a0b;
-  color: #fafaf9;
+  background-color: rgb(var(--c-base));
+  color: rgb(var(--c-text));
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }

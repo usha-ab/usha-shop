@@ -74,6 +74,15 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${outfit.variable} ${jetbrainsMono.variable}`}>
+      <head>
+        {/* Set the saved theme before paint to avoid a flash of the wrong mode. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{if(localStorage.getItem('usha-theme')==='light')document.documentElement.classList.add('light')}catch(e){}})()",
+          }}
+        />
+      </head>
       <body className="min-h-screen bg-base font-sans text-text antialiased">
         <NextIntlClientProvider>
           <div className="flex min-h-screen flex-col">
