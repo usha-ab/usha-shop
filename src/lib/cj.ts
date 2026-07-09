@@ -95,7 +95,9 @@ export async function createCjOrder(input: CjOrderInput): Promise<{ cjOrderId: s
       // CJ requires a ship-from warehouse country. Default to CN (where this
       // product's factory stock sits); override per-account via CJ_FROM_COUNTRY.
       fromCountryCode: process.env.CJ_FROM_COUNTRY || "CN",
-      logisticName: process.env.CJ_LOGISTIC_NAME || undefined,
+      // CJ also requires a shipping method. CJPacket Ordinary is the standard
+      // tracked global line; override via CJ_LOGISTIC_NAME per route if needed.
+      logisticName: process.env.CJ_LOGISTIC_NAME || "CJPacket Ordinary",
       remark: "Usha Shop order",
       products: [{ vid: input.vid, quantity: input.quantity }],
     }),
