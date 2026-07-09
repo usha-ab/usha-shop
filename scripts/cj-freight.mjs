@@ -63,6 +63,9 @@ if (Array.isArray(freight?.data) && freight.data.length) {
 const logisticName = process.env.CJ_LOGISTIC_NAME || "CJPacket Ordinary";
 const orderBody = {
   orderNumber: "diag-" + Date.now(),
+  email: process.env.CJ_TEST_EMAIL || "test@usha.se",
+  iossType: process.env.CJ_IOSS_NUMBER ? 2 : 3, // 3 = CJ IOSS
+  iossNumber: process.env.CJ_IOSS_NUMBER || "CJ-IOSS",
   shippingCountryCode: TO,
   shippingCountry: "Sweden",
   shippingProvince: "Stockholm",

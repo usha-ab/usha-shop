@@ -86,9 +86,11 @@ export async function createCjOrder(input: CjOrderInput): Promise<{ cjOrderId: s
     body: JSON.stringify({
       orderNumber: input.orderNumber,
       email: input.email,
-      // EU imports need an IOSS declaration. Set CJ_IOSS_NUMBER (Usha's own
-      // IOSS) to prepay VAT; leave unset only for non-EU-only catalogues.
-      iossNumber: process.env.CJ_IOSS_NUMBER || undefined,
+      // EU imports need an IOSS declaration. Default to CJ's IOSS (type 3, CJ
+      // declares the VAT — valid for orders under €150). Set CJ_IOSS_NUMBER to
+      // switch to Usha's own IOSS (type 2).
+      iossType: process.env.CJ_IOSS_NUMBER ? 2 : 3,
+      iossNumber: process.env.CJ_IOSS_NUMBER || "CJ-IOSS",
       shippingCountryCode: s.countryCode,
       shippingCountry: s.country,
       shippingProvince: s.province,
