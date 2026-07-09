@@ -50,9 +50,9 @@ export const PRODUCTS: Product[] = [
     brand: "Usha",
     price: { sek: { amount: 39900, display: "399 kr" }, eur: { amount: 3500, display: "€35" } },
     colors: [
-      { id: "brown", swatch: "#6b4a2b", image: "/images/chest-rig-brown.jpg", cjVid: "" },
-      { id: "olive", swatch: "#4b5320", image: "/images/chest-rig-olive.jpg", cjVid: "" },
-      { id: "black", swatch: "#141414", image: "/images/chest-rig-black.jpg", cjVid: "" },
+      { id: "brown", swatch: "#6b4a2b", image: "/images/chest-rig-brown.jpg", cjVid: "2509230333571627700" },
+      { id: "olive", swatch: "#4b5320", image: "/images/chest-rig-olive.jpg", cjVid: "2509230333571627800" },
+      { id: "black", swatch: "#141414", image: "/images/chest-rig-black.jpg", cjVid: "2509230333571627300" },
     ],
     gallery: ["/images/chest-rig-worn.jpg", "/images/chest-rig-detail.jpg"],
   },

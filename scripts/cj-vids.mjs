@@ -1,0 +1,64 @@
+// One-off helper: list CJ variant IDs (VID) per colour for a product.
+// The VIDs are what src/lib/product.ts needs in each colour's `cjVid`.
+//
+// Your CJ API key stays in your terminal — it is never printed. Only the
+// (non-secret) colour → VID mapping is shown, which you can paste back.
+//
+// Usage (chest rig is the default product):
+//   CJ_API_EMAIL="you@usha.se" CJ_API_KEY="your-cj-api-key" node scripts/cj-vids.mjs
+//
+// Override the product if needed:
+//   CJ_PID="2509230333571626900" ... node scripts/cj-vids.mjs
+//   CJ_SKU="CJYD2538710"          ... node scripts/cj-vids.mjs
+
+const BASE = "https://developers.cjdropshipping.com/api2.0/v1";
+const PID = process.env.CJ_PID || "2509230333571626900"; // chest rig CJ product id
+const SKU = process.env.CJ_SKU || "CJYD2538710"; // chest rig SPU (fallback)
+
+const email = process.env.CJ_API_EMAIL;
+const apiKey = process.env.CJ_API_KEY;
+if (!email || !apiKey) {
+  console.error("Set CJ_API_EMAIL and CJ_API_KEY env vars first.");
+  process.exit(1);
+}
+
+const auth = await fetch(`${BASE}/authentication/getAccessToken`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ email, apiKey }),
+}).then((r) => r.json());
+
+const token = auth?.data?.accessToken;
+if (!token) {
+  console.error("CJ auth failed:", auth?.message || JSON.stringify(auth).slice(0, 300));
+  console.error("(Note: getAccessToken is rate-limited to ~1 call / 5 min.)");
+  process.exit(1);
+}
+
+const query = (url) =>
+  fetch(url, { headers: { "CJ-Access-Token": token } }).then((r) => r.json());
+
+let res = await query(`${BASE}/product/query?pid=${encodeURIComponent(PID)}`);
+let variants = res?.data?.variants;
+if (!variants || !variants.length) {
+  res = await query(`${BASE}/product/query?productSku=${encodeURIComponent(SKU)}`);
+  variants = res?.data?.variants;
+}
+
+if (!variants || !variants.length) {
+  console.error("No variants found. Raw response:");
+  console.error(JSON.stringify(res, null, 2).slice(0, 1200));
+  process.exit(1);
+}
+
+console.log("\n  colour / variant            VID                     SKU");
+console.log("  " + "-".repeat(64));
+for (const v of variants) {
+  const name = (v.variantKey || v.variantNameEn || v.variantName || "?").toString();
+  console.log(
+    "  " + name.padEnd(26) + " " + String(v.vid).padEnd(22) + "  " + (v.variantSku || "")
+  );
+}
+console.log(
+  "\nPaste the colour → VID lines back to Claude. Map: brown→brown, olive→army green, black→black.\n"
+);
