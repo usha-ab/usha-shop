@@ -30,6 +30,8 @@ export interface CjShippingAddress {
 export interface CjOrderInput {
   /** Our own order reference (use the Stripe session id). */
   orderNumber: string;
+  /** Customer email — CJ requires it. */
+  email: string;
   /** CJ variant id + quantity. */
   vid: string;
   quantity: number;
@@ -83,6 +85,10 @@ export async function createCjOrder(input: CjOrderInput): Promise<{ cjOrderId: s
     headers: { "Content-Type": "application/json", "CJ-Access-Token": token },
     body: JSON.stringify({
       orderNumber: input.orderNumber,
+      email: input.email,
+      // EU imports need an IOSS declaration. Set CJ_IOSS_NUMBER (Usha's own
+      // IOSS) to prepay VAT; leave unset only for non-EU-only catalogues.
+      iossNumber: process.env.CJ_IOSS_NUMBER || undefined,
       shippingCountryCode: s.countryCode,
       shippingCountry: s.country,
       shippingProvince: s.province,

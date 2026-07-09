@@ -17,6 +17,7 @@ export const runtime = "nodejs";
 
 interface FulfillmentOrder {
   stripeSessionId: string;
+  email: string;
   slug: string;
   sku: string;
   color: string;
@@ -82,6 +83,7 @@ async function forwardToSupplier(order: FulfillmentOrder): Promise<void> {
 
   const { cjOrderId } = await createCjOrder({
     orderNumber: order.stripeSessionId,
+    email: order.email,
     vid: cjVid,
     quantity: order.quantity,
     shipping: order.shipping,
@@ -118,6 +120,7 @@ export async function POST(req: Request) {
     if (session.payment_status === "paid") {
       const order: FulfillmentOrder = {
         stripeSessionId: session.id,
+        email: session.customer_details?.email ?? session.customer_email ?? "",
         slug: session.metadata?.slug ?? "",
         sku: session.metadata?.sku ?? "unknown",
         color: session.metadata?.color ?? "unknown",
