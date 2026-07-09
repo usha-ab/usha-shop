@@ -55,29 +55,29 @@
     }
     },
     "usha-belt-bag": {
-      "name": "Usha Waist Belt — Suede Belt Bag",
-      "tagline": "A statement belt with a smart little pouch. Hands free.",
-      "description": "The Usha Waist Belt carries more than it looks. A wide belt in soft faux suede (vegan leather) with a small snap pouch for cards, keys and lip balm. Wear it over a dress, jeans or a blazer. Less bag. More look.",
+      "name": "Usha Belt Bag — PU Leather Waist Belt",
+      "tagline": "A slim belt with two pouches. Phone, cards, keys — hands free.",
+      "description": "The Usha Belt Bag turns a belt into your bag. A slim PU-leather waist belt with two pouches — a flap pocket and a phone sleeve — plus a handy key clip. Wear it high on the waist over a dress or jeans. Less bag. More look.",
       "featuresHeading": "What you get",
       "features": [
-        "Wide statement belt + small snap pouch",
-        "Soft faux suede (vegan leather)",
-        "Adjustable fit",
-        "Wear over a dress, jeans or blazer",
-        "Brushed-silver hardware"
+        "Slim belt with two pouches (flap pocket + phone sleeve)",
+        "Handy key clip",
+        "Soft PU leather (vegan leather)",
+        "Adjustable fit, worn on the waist",
+        "Gold-tone hardware"
       ],
       "includesHeading": "In the box",
-      "includes": ["Usha Waist Belt in your chosen colour"],
+      "includes": ["Usha Belt Bag in your chosen colour (belt + 2 pouches)"],
       "specsHeading": "Specs",
       "specs": {
-        "material": { "label": "Material", "value": "Faux suede (vegan leather), metal hardware" },
-        "size": { "label": "Size", "value": "belt width ~7 cm · adjustable waist ~70–95 cm" },
+        "material": { "label": "Material", "value": "PU leather (vegan leather), metal hardware" },
+        "size": { "label": "Size", "value": "adjustable waist ~75–110 cm · pouch ~11 × 15 cm" },
         "weight": { "label": "Weight", "value": "approx. 250 g" },
-        "fits": { "label": "Fits", "value": "Cards, keys, lip balm, cash" }
+        "fits": { "label": "Fits", "value": "Phone, cards, keys, lip balm, cash" }
       },
-      "materialNote": "Faux suede (vegan leather) — not genuine suede.",
+      "materialNote": "PU leather (vegan leather) — not genuine leather.",
       "colorsLabel": "Colour",
-      "colorNames": { "brown": "Coffee brown", "black": "Black" },
+      "colorNames": { "black": "Black", "brown": "Brown", "tan": "Tan", "beige": "Beige", "sage": "Sage green", "white": "White" },
       "quantityLabel": "Quantity",
       "cta": "Add to cart",
       "ctaLoading": "Opening checkout…",
@@ -87,8 +87,8 @@
       "trustShipping": "Tracked shipping",
       "trustReturns": "14-day returns",
       "seo": {
-        "title": "Usha Waist Belt – Suede Belt Bag | Usha Shop",
-        "description": "Wide faux-suede statement belt with a smart snap pouch. Coffee brown or black. Free shipping over €59. 14-day returns."
+        "title": "Usha Belt Bag – PU Leather Waist Belt | Usha Shop",
+        "description": "Slim PU-leather waist belt with two pouches and a key clip. 6 colours. Free shipping over €59. 14-day returns."
       }
     }
   },

@@ -55,29 +55,29 @@
     }
     },
     "usha-belt-bag": {
-      "name": "Usha Waist Belt — Cinturón bolso de ante sintético",
-      "tagline": "Un cinturón statement con un bolsillo inteligente. Manos libres.",
-      "description": "El Usha Waist Belt lleva más de lo que parece. Un cinturón ancho de ante sintético suave (piel vegana) con un pequeño bolsillo con broche para tarjetas, llaves y bálsamo labial. Llévalo sobre un vestido, vaqueros o un blazer. Menos bolso. Más look.",
+      "name": "Usha Belt Bag — Cinturón de cintura en piel PU",
+      "tagline": "Un cinturón fino con dos bolsillos. Móvil, tarjetas, llaves — manos libres.",
+      "description": "El Usha Belt Bag convierte el cinturón en tu bolso. Un cinturón fino de piel PU con dos bolsillos —uno con solapa y otro para el móvil— y un práctico mosquetón para llaves. Llévalo alto en la cintura sobre un vestido o unos vaqueros. Menos bolso. Más look.",
       "featuresHeading": "Qué incluye",
       "features": [
-        "Cinturón statement ancho + bolsillo con broche",
-        "Ante sintético suave (piel vegana)",
-        "Ajuste regulable",
-        "Sobre vestido, vaqueros o blazer",
-        "Detalles metálicos plata cepillada"
+        "Cinturón fino con dos bolsillos (solapa + funda de móvil)",
+        "Práctico mosquetón para llaves",
+        "Piel PU suave (piel vegana)",
+        "Ajuste regulable, se lleva en la cintura",
+        "Herrajes en tono dorado"
       ],
       "includesHeading": "En la caja",
-      "includes": ["Usha Waist Belt en el color elegido"],
+      "includes": ["Usha Belt Bag en el color elegido (cinturón + 2 bolsillos)"],
       "specsHeading": "Especificaciones",
       "specs": {
-        "material": { "label": "Material", "value": "Ante sintético (piel vegana), detalles metálicos" },
-        "size": { "label": "Medidas", "value": "ancho del cinturón ~7 cm · cintura ajustable ~70–95 cm" },
+        "material": { "label": "Material", "value": "Piel PU (piel vegana), herrajes de metal" },
+        "size": { "label": "Medidas", "value": "cintura regulable ~75–110 cm · bolsillo ~11 × 15 cm" },
         "weight": { "label": "Peso", "value": "aprox. 250 g" },
-        "fits": { "label": "Cabe", "value": "Tarjetas, llaves, bálsamo labial, efectivo" }
+        "fits": { "label": "Cabe", "value": "Móvil, tarjetas, llaves, pintalabios, efectivo" }
       },
-      "materialNote": "Ante sintético (piel vegana) — no es ante auténtico.",
+      "materialNote": "Piel PU (piel vegana) — no es piel auténtica.",
       "colorsLabel": "Color",
-      "colorNames": { "brown": "Marrón café", "black": "Negro" },
+      "colorNames": { "black": "Negro", "brown": "Marrón", "tan": "Marrón claro", "beige": "Beige", "sage": "Verde salvia", "white": "Blanco" },
       "quantityLabel": "Cantidad",
       "cta": "Añadir al carrito",
       "ctaLoading": "Abriendo el pago…",
@@ -87,8 +87,8 @@
       "trustShipping": "Envío con seguimiento",
       "trustReturns": "14 días de devolución",
       "seo": {
-        "title": "Usha Waist Belt – Cinturón bolso de ante | Usha Shop",
-        "description": "Cinturón ancho statement de ante sintético con bolsillo. Marrón café o negro. Envío gratis desde €59. 14 días de devolución."
+        "title": "Usha Belt Bag – Cinturón de cintura en piel PU | Usha Shop",
+        "description": "Cinturón fino de piel PU con dos bolsillos y mosquetón. 6 colores. Envío gratis desde €59. 14 días de devolución."
       }
     }
   },

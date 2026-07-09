@@ -55,29 +55,29 @@
     }
     },
     "usha-belt-bag": {
-      "name": "Usha Waist Belt — Bältesväska i mockaimitation",
-      "tagline": "Statement-bälte med smart ficka. Händerna fria.",
-      "description": "Usha Waist Belt bär mer än det ser ut. Ett brett bälte i mjuk mockaimitation (veganläder) med en liten snäpp-ficka för kort, nycklar och läppstift. Bär det över klänningen, jeansen eller kavajen. Mindre väska. Mer look.",
+      "name": "Usha Belt Bag — Midjebälte i PU-läder",
+      "tagline": "Ett smalt bälte med två fickor. Telefon, kort, nycklar — händerna fria.",
+      "description": "Usha Belt Bag gör bältet till din väska. Ett smalt midjebälte i PU-läder med två fickor – en flik-ficka och en telefonficka – plus ett smidigt nyckelspänne. Bär det högt i midjan över klänningen eller jeansen. Mindre väska. Mer look.",
       "featuresHeading": "Detta får du",
       "features": [
-        "Brett statement-bälte + liten snäpp-ficka",
-        "Mjuk mockaimitation (veganläder)",
-        "Justerbar passform",
-        "Bär över klänning, jeans eller kavaj",
-        "Metalldetaljer i borstat silver"
+        "Smalt bälte med två fickor (flik-ficka + telefonficka)",
+        "Smidigt nyckelspänne",
+        "Mjukt PU-läder (veganläder)",
+        "Justerbar passform, bärs i midjan",
+        "Detaljer i guldton"
       ],
       "includesHeading": "I lådan",
-      "includes": ["Usha Waist Belt i vald färg"],
+      "includes": ["Usha Belt Bag i vald färg (bälte + 2 fickor)"],
       "specsHeading": "Specifikation",
       "specs": {
-        "material": { "label": "Material", "value": "Mockaimitation (veganläder), metalldetaljer" },
-        "size": { "label": "Mått", "value": "bältesbredd ~7 cm · justerbar midja ~70–95 cm" },
+        "material": { "label": "Material", "value": "PU-läder (veganläder), metalldetaljer" },
+        "size": { "label": "Mått", "value": "justerbar midja ~75–110 cm · ficka ~11 × 15 cm" },
         "weight": { "label": "Vikt", "value": "ca 250 g" },
-        "fits": { "label": "Rymmer", "value": "Kort, nycklar, läppstift, kontanter" }
+        "fits": { "label": "Rymmer", "value": "Telefon, kort, nycklar, läppstift, kontanter" }
       },
-      "materialNote": "Mockaimitation (veganläder) – inte äkta mocka.",
+      "materialNote": "PU-läder (veganläder) – inte äkta läder.",
       "colorsLabel": "Färg",
-      "colorNames": { "brown": "Kaffebrun", "black": "Svart" },
+      "colorNames": { "black": "Svart", "brown": "Brun", "tan": "Ljusbrun", "beige": "Beige", "sage": "Salviagrön", "white": "Vit" },
       "quantityLabel": "Antal",
       "cta": "Lägg i varukorg",
       "ctaLoading": "Öppnar kassan…",
@@ -87,8 +87,8 @@
       "trustShipping": "Spårbar frakt",
       "trustReturns": "14 dagars ångerrätt",
       "seo": {
-        "title": "Usha Waist Belt – Bältesväska i mockaimitation | Usha Shop",
-        "description": "Brett statement-bälte i mockaimitation med smart snäpp-ficka. Kaffebrun eller svart. Fri frakt över 600 kr. 14 dagars ångerrätt."
+        "title": "Usha Belt Bag – Midjebälte i PU-läder | Usha Shop",
+        "description": "Smalt midjebälte i PU-läder med två fickor och nyckelspänne. 6 färger. Fri frakt över 600 kr. 14 dagars ångerrätt."
       }
     }
   },
