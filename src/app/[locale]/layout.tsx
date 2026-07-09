@@ -38,7 +38,9 @@ export async function generateMetadata({
 
   return {
     metadataBase: new URL(SITE_URL),
-    icons: { icon: "https://usha.se/icon-512.png" },
+    // Favicon is served same-origin from src/app/icon.png (Next file convention).
+    // The previous cross-origin icon URL rendered unreliably — a grey globe in
+    // the browser tab.
     title: {
       default: defaultTitle,
       template: `%s | ${meta("siteName")}`,
