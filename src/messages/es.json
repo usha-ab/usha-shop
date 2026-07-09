@@ -47,7 +47,7 @@
     "freeShipping": "Envío gratis a partir de {threshold}",
     "checkoutError": "Algo salió mal en el pago. Inténtalo de nuevo.",
     "trustSecure": "Pago seguro",
-    "trustShipping": "Envío rápido (UE)",
+    "trustShipping": "Envío con seguimiento",
     "trustReturns": "14 días de devolución",
     "seo": {
       "title": "Usha Chest Rig – Bolso utilitario de piel PU | Usha Shop",
@@ -84,7 +84,7 @@
       "freeShipping": "Envío gratis a partir de {threshold}",
       "checkoutError": "Algo salió mal en el pago. Inténtalo de nuevo.",
       "trustSecure": "Pago seguro",
-      "trustShipping": "Envío rápido (UE)",
+      "trustShipping": "Envío con seguimiento",
       "trustReturns": "14 días de devolución",
       "seo": {
         "title": "Usha Waist Belt – Cinturón bolso de ante | Usha Shop",
@@ -94,7 +94,7 @@
   },
   "shipping": {
     "heading": "Envío y devoluciones",
-    "body": "Se envía en 1–3 días laborables. Entrega en 5–9 días laborables (almacén UE). 14 días de derecho de desistimiento."
+    "body": "Se procesa en 1–3 días laborables. Entrega habitual en 7–15 días laborables con seguimiento. 14 días de derecho de desistimiento."
   },
   "reviews": {
     "heading": "Lo que dicen los clientes",
@@ -113,7 +113,7 @@
   "trust": {
     "securePayment": "Pago seguro",
     "freeReturns": "14 días de devolución",
-    "euWarehouse": "Almacén UE"
+    "euWarehouse": "Envío con seguimiento"
   },
   "checkout": {
     "successTitle": "¡Gracias por tu pedido!",
@@ -150,7 +150,7 @@
     },
     "shipping": {
       "title": "Envíos",
-      "body": "Enviamos en 1–3 días laborables desde nuestro almacén de la UE. La entrega estimada es de 5–9 días laborables. Envío gratis en pedidos superiores a €59; en caso contrario se aplica una tarifa de envío fija que se muestra en el pago. Recibirás un enlace de seguimiento por correo cuando se envíe tu pedido."
+      "body": "Procesamos tu pedido en 1–3 días laborables. Los artículos se envían desde nuestro almacén global y la entrega habitual es de 7–15 días laborables. Envío gratis en pedidos superiores a €59; en caso contrario se aplica una tarifa de envío fija que se muestra en el pago. Recibirás un enlace de seguimiento por correo cuando se envíe tu pedido."
     }
   }
 }

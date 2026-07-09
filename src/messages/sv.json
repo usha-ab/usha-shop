@@ -47,7 +47,7 @@
     "freeShipping": "Fri frakt över {threshold}",
     "checkoutError": "Något gick fel med kassan. Försök igen.",
     "trustSecure": "Säker betalning",
-    "trustShipping": "Snabb leverans (EU-lager)",
+    "trustShipping": "Spårbar frakt",
     "trustReturns": "14 dagars ångerrätt",
     "seo": {
       "title": "Usha Chest Rig – Utility-bröstväska i PU-läder | Usha Shop",
@@ -84,7 +84,7 @@
       "freeShipping": "Fri frakt över {threshold}",
       "checkoutError": "Något gick fel med kassan. Försök igen.",
       "trustSecure": "Säker betalning",
-      "trustShipping": "Snabb leverans (EU-lager)",
+      "trustShipping": "Spårbar frakt",
       "trustReturns": "14 dagars ångerrätt",
       "seo": {
         "title": "Usha Waist Belt – Bältesväska i mockaimitation | Usha Shop",
@@ -94,7 +94,7 @@
   },
   "shipping": {
     "heading": "Frakt & retur",
-    "body": "Skickas inom 1–3 arbetsdagar. Leverans 5–9 arbetsdagar (EU-lager). 14 dagars ångerrätt enligt distansavtalslagen."
+    "body": "Behandlas inom 1–3 arbetsdagar. Normal leveranstid 7–15 arbetsdagar med spårning. 14 dagars ångerrätt enligt distansavtalslagen."
   },
   "reviews": {
     "heading": "Vad kunder säger",
@@ -113,7 +113,7 @@
   "trust": {
     "securePayment": "Säker betalning",
     "freeReturns": "14 dagars ångerrätt",
-    "euWarehouse": "EU-lager"
+    "euWarehouse": "Spårbar frakt"
   },
   "checkout": {
     "successTitle": "Tack för din beställning!",
@@ -150,7 +150,7 @@
     },
     "shipping": {
       "title": "Frakt",
-      "body": "Vi skickar inom 1–3 arbetsdagar från vårt EU-lager. Beräknad leveranstid är 5–9 arbetsdagar. Fri frakt vid köp över 600 kr, annars tillkommer en fast fraktavgift som visas i kassan. Du får en spårningslänk via e-post när ordern skickats."
+      "body": "Vi behandlar din order inom 1–3 arbetsdagar. Varan skickas från vårt globala lager och normal leveranstid är 7–15 arbetsdagar. Fri frakt vid köp över 600 kr, annars tillkommer en fast fraktavgift som visas i kassan. Du får en spårningslänk via e-post när ordern skickats."
     }
   }
 }

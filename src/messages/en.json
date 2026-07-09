@@ -47,7 +47,7 @@
     "freeShipping": "Free shipping over {threshold}",
     "checkoutError": "Something went wrong at checkout. Please try again.",
     "trustSecure": "Secure payment",
-    "trustShipping": "Fast EU shipping",
+    "trustShipping": "Tracked shipping",
     "trustReturns": "14-day returns",
     "seo": {
       "title": "Usha Chest Rig – PU Leather Utility Bag | Usha Shop",
@@ -84,7 +84,7 @@
       "freeShipping": "Free shipping over {threshold}",
       "checkoutError": "Something went wrong at checkout. Please try again.",
       "trustSecure": "Secure payment",
-      "trustShipping": "Fast EU shipping",
+      "trustShipping": "Tracked shipping",
       "trustReturns": "14-day returns",
       "seo": {
         "title": "Usha Waist Belt – Suede Belt Bag | Usha Shop",
@@ -94,7 +94,7 @@
   },
   "shipping": {
     "heading": "Shipping & returns",
-    "body": "Ships within 1–3 business days. Delivery 5–9 business days (EU warehouse). 14-day return right."
+    "body": "Processed within 1–3 business days. Typical delivery 7–15 business days with tracking. 14-day return right."
   },
   "reviews": {
     "heading": "What customers say",
@@ -113,7 +113,7 @@
   "trust": {
     "securePayment": "Secure payment",
     "freeReturns": "14-day returns",
-    "euWarehouse": "EU warehouse"
+    "euWarehouse": "Tracked shipping"
   },
   "checkout": {
     "successTitle": "Thank you for your order!",
@@ -150,7 +150,7 @@
     },
     "shipping": {
       "title": "Shipping",
-      "body": "We ship within 1–3 business days from our EU warehouse. Estimated delivery is 5–9 business days. Free shipping on orders over €59; otherwise a flat shipping fee applies, shown at checkout. You receive a tracking link by email once your order ships."
+      "body": "We process your order within 1–3 business days. Items ship from our global warehouse and typical delivery is 7–15 business days. Free shipping on orders over €59; otherwise a flat shipping fee applies, shown at checkout. You receive a tracking link by email once your order ships."
     }
   }
 }
