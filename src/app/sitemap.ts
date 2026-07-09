@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
-import { PRODUCT } from "@/lib/product";
+import { PRODUCTS } from "@/lib/product";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shop.usha.se";
 
@@ -12,7 +12,14 @@ function url(locale: string, path: string) {
 // Emit the product + legal pages in every locale, each with hreflang
 // alternates so search engines index the right language per market.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = ["", `/${PRODUCT.slug}`, "/terms", "/privacy", "/returns", "/shipping"];
+  const paths = [
+    "",
+    ...PRODUCTS.map((p) => `/${p.slug}`),
+    "/terms",
+    "/privacy",
+    "/returns",
+    "/shipping",
+  ];
 
   return paths.map((path) => ({
     url: url(routing.defaultLocale, path),

@@ -7,7 +7,14 @@
     "shop": "Butik",
     "instagram": "Följ @usha.shop på Instagram"
   },
-  "product": {
+  "catalog": {
+    "heading": "Usha Shop",
+    "subheading": "Lifestyle-accessoarer i veganläder. Mindre stök, mer stil.",
+    "fromPrice": "{price}",
+    "view": "Visa"
+  },
+  "products": {
+    "usha-chest-rig": {
     "name": "Usha Chest Rig — Utility-väska i PU-läder",
     "tagline": "Allt du behöver, nära kroppen. Inget skräp i fickorna.",
     "description": "Usha Chest Rig är den snygga lösningen på \"var lägger jag grejerna?\". En chest rig i mjukt PU-läder som bär telefon, plånbok, nycklar och powerbank – utan att du känner av det. Justerbar kryss-sele som sitter lika bra över en hoodie som en kavaj. Mindre stök. Mer stil.",
@@ -45,6 +52,44 @@
     "seo": {
       "title": "Usha Chest Rig – Utility-bröstväska i PU-läder | Usha Shop",
       "description": "Snygg chest rig i PU-läder för telefon, plånbok & nycklar. Brun, oliv eller svart. Fri frakt över 600 kr. 14 dagars ångerrätt."
+    }
+    },
+    "usha-belt-bag": {
+      "name": "Usha Waist Belt — Bältesväska i mockaimitation",
+      "tagline": "Statement-bälte med smart ficka. Händerna fria.",
+      "description": "Usha Waist Belt bär mer än det ser ut. Ett brett bälte i mjuk mockaimitation (veganläder) med en liten snäpp-ficka för kort, nycklar och läppstift. Bär det över klänningen, jeansen eller kavajen. Mindre väska. Mer look.",
+      "featuresHeading": "Detta får du",
+      "features": [
+        "Brett statement-bälte + liten snäpp-ficka",
+        "Mjuk mockaimitation (veganläder)",
+        "Justerbar passform",
+        "Bär över klänning, jeans eller kavaj",
+        "Metalldetaljer i borstat silver"
+      ],
+      "includesHeading": "I lådan",
+      "includes": ["Usha Waist Belt i vald färg"],
+      "specsHeading": "Specifikation",
+      "specs": {
+        "material": { "label": "Material", "value": "Mockaimitation (veganläder), metalldetaljer" },
+        "size": { "label": "Mått", "value": "bältesbredd ~7 cm · justerbar midja ~70–95 cm" },
+        "weight": { "label": "Vikt", "value": "ca 250 g" },
+        "fits": { "label": "Rymmer", "value": "Kort, nycklar, läppstift, kontanter" }
+      },
+      "materialNote": "Mockaimitation (veganläder) – inte äkta mocka.",
+      "colorsLabel": "Färg",
+      "colorNames": { "brown": "Kaffebrun", "black": "Svart" },
+      "quantityLabel": "Antal",
+      "cta": "Lägg i varukorg",
+      "ctaLoading": "Öppnar kassan…",
+      "freeShipping": "Fri frakt över {threshold}",
+      "checkoutError": "Något gick fel med kassan. Försök igen.",
+      "trustSecure": "Säker betalning",
+      "trustShipping": "Snabb leverans (EU-lager)",
+      "trustReturns": "14 dagars ångerrätt",
+      "seo": {
+        "title": "Usha Waist Belt – Bältesväska i mockaimitation | Usha Shop",
+        "description": "Brett statement-bälte i mockaimitation med smart snäpp-ficka. Kaffebrun eller svart. Fri frakt över 600 kr. 14 dagars ångerrätt."
+      }
     }
   },
   "shipping": {

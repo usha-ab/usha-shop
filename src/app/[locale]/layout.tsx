@@ -32,28 +32,29 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "product.seo" });
+  const t = await getTranslations({ locale, namespace: "catalog" });
   const meta = await getTranslations({ locale, namespace: "meta" });
+  const defaultTitle = `${t("heading")} — ${t("subheading")}`;
 
   return {
     metadataBase: new URL(SITE_URL),
     icons: { icon: "https://usha.se/icon-512.png" },
     title: {
-      default: t("title"),
+      default: defaultTitle,
       template: `%s | ${meta("siteName")}`,
     },
-    description: t("description"),
+    description: t("subheading"),
     openGraph: {
       type: "website",
       siteName: meta("siteName"),
-      title: t("title"),
-      description: t("description"),
+      title: defaultTitle,
+      description: t("subheading"),
       images: [{ url: "/images/og-cover.jpg", width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
-      title: t("title"),
-      description: t("description"),
+      title: defaultTitle,
+      description: t("subheading"),
       images: ["/images/og-cover.jpg"],
     },
   };

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type Stripe from "stripe";
 import { getStripe } from "@/lib/stripe";
-import { cjVidForColor } from "@/lib/product";
+import { getProduct, cjVidForColor } from "@/lib/product";
 import { isCjConfigured, createCjOrder, type CjShippingAddress } from "@/lib/cj";
 
 export const runtime = "nodejs";
@@ -17,6 +17,7 @@ export const runtime = "nodejs";
 
 interface FulfillmentOrder {
   stripeSessionId: string;
+  slug: string;
   sku: string;
   color: string;
   quantity: number;
@@ -67,7 +68,8 @@ async function forwardToSupplier(order: FulfillmentOrder): Promise<void> {
   // Always log for an audit trail / manual replay.
   console.log("[fulfillment] paid order:", JSON.stringify(order));
 
-  const cjVid = cjVidForColor(order.color);
+  const product = getProduct(order.slug);
+  const cjVid = product ? cjVidForColor(product, order.color) : "";
 
   if (!isCjConfigured() || !cjVid || !order.shipping) {
     console.log(
@@ -116,6 +118,7 @@ export async function POST(req: Request) {
     if (session.payment_status === "paid") {
       const order: FulfillmentOrder = {
         stripeSessionId: session.id,
+        slug: session.metadata?.slug ?? "",
         sku: session.metadata?.sku ?? "unknown",
         color: session.metadata?.color ?? "unknown",
         quantity: Number(session.metadata?.quantity ?? "1"),

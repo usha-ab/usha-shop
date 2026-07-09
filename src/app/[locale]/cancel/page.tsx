@@ -1,6 +1,5 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { PRODUCT } from "@/lib/product";
 
 export default async function CancelPage({
   params,
@@ -16,7 +15,7 @@ export default async function CancelPage({
       <h1 className="text-3xl font-semibold tracking-tight">{t("cancelTitle")}</h1>
       <p className="mt-3 leading-relaxed text-muted">{t("cancelBody")}</p>
       <Link
-        href={`/${PRODUCT.slug}`}
+        href="/"
         className="mt-8 rounded-xl bg-usha-gradient px-6 py-3 text-sm font-semibold text-[#0a0a0b]"
       >
         {t("backToProduct")}

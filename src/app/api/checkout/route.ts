@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
+import { getTranslations } from "next-intl/server";
 import { getStripe } from "@/lib/stripe";
-import { PRODUCT, PRICING, currencyForLocale } from "@/lib/product";
+import { getProduct, currencyForLocale, SHIPPING } from "@/lib/product";
 import { routing } from "@/i18n/routing";
 
 export const runtime = "nodejs";
@@ -21,17 +22,21 @@ function localeUrl(locale: string, path: string): string {
 }
 
 export async function POST(req: Request) {
-  let body: { colorId?: string; quantity?: number; locale?: string };
+  let body: { slug?: string; colorId?: string; quantity?: number; locale?: string };
   try {
     body = await req.json();
   } catch {
     return NextResponse.json({ error: "invalid_body" }, { status: 400 });
   }
 
-  const { colorId, quantity, locale } = body;
+  const { slug, colorId, quantity, locale } = body;
 
   // --- validate ---
-  const color = PRODUCT.colors.find((c) => c.id === colorId);
+  const product = getProduct(slug ?? "");
+  if (!product) {
+    return NextResponse.json({ error: "invalid_product" }, { status: 400 });
+  }
+  const color = product.colors.find((c) => c.id === colorId);
   if (!color) {
     return NextResponse.json({ error: "invalid_color" }, { status: 400 });
   }
@@ -40,33 +45,35 @@ export async function POST(req: Request) {
     ? (locale as string)
     : routing.defaultLocale;
 
-  const currency = currencyForLocale(activeLocale as (typeof routing.locales)[number]);
-  const price = PRICING[currency];
+  const currency = currencyForLocale(activeLocale);
+  const price = product.price[currency];
+  const ship = SHIPPING[currency];
 
-  const subtotal = price.unitAmount * qty;
-  const shippingAmount =
-    subtotal >= price.freeShippingThreshold ? 0 : price.shippingFee;
+  const subtotal = price.amount * qty;
+  const shippingAmount = subtotal >= ship.freeThreshold ? 0 : ship.fee;
+
+  // Localised product name for the Stripe line item.
+  const t = await getTranslations({ locale: activeLocale, namespace: `products.${product.slug}` });
+  const name = t("name");
 
   try {
     const stripe = getStripe();
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       locale: activeLocale as "sv" | "en" | "es",
-      // Payment methods (Klarna / Swish / cards / Apple Pay / Google Pay) are
-      // presented automatically per the methods enabled on the platform Stripe
-      // account + buyer eligibility — Checkout resolves them when
-      // payment_method_types is omitted.
+      // Payment methods (Klarna / cards / Apple Pay / Google Pay) are presented
+      // automatically per the methods enabled on the platform Stripe account.
       line_items: [
         {
           quantity: qty,
           price_data: {
             currency,
-            unit_amount: price.unitAmount,
+            unit_amount: price.amount,
             product_data: {
-              name: "Usha Chest Rig — PU Leather Utility Bag",
+              name,
               description: `Color: ${color.id}`,
               images: [`${SITE_URL}${color.image}`],
-              metadata: { sku: PRODUCT.sku, color: color.id },
+              metadata: { sku: product.sku, slug: product.slug, color: color.id },
             },
           },
         },
@@ -88,7 +95,13 @@ export async function POST(req: Request) {
         },
       ],
       // Carried through to the webhook for fulfilment.
-      metadata: { sku: PRODUCT.sku, color: color.id, quantity: String(qty), locale: activeLocale },
+      metadata: {
+        sku: product.sku,
+        slug: product.slug,
+        color: color.id,
+        quantity: String(qty),
+        locale: activeLocale,
+      },
       success_url: localeUrl(activeLocale, "/success?session_id={CHECKOUT_SESSION_ID}"),
       cancel_url: localeUrl(activeLocale, "/cancel"),
     });

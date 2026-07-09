@@ -1,7 +1,6 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { CheckIcon } from "@/components/icons";
 import { Link } from "@/i18n/navigation";
-import { PRODUCT } from "@/lib/product";
 
 export default async function SuccessPage({
   params,
@@ -20,7 +19,7 @@ export default async function SuccessPage({
       <h1 className="mt-6 text-3xl font-semibold tracking-tight">{t("successTitle")}</h1>
       <p className="mt-3 leading-relaxed text-muted">{t("successBody")}</p>
       <Link
-        href={`/${PRODUCT.slug}`}
+        href="/"
         className="mt-8 rounded-xl border border-border px-6 py-3 text-sm font-semibold transition-colors hover:border-gold hover:text-gold"
       >
         {t("continueShopping")}

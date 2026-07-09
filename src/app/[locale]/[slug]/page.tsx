@@ -1,48 +1,72 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { routing } from "@/i18n/routing";
-import { PRODUCT, priceForLocale, currencyForLocale } from "@/lib/product";
+import {
+  PRODUCTS,
+  getProduct,
+  currencyForLocale,
+  SHIPPING,
+  type Product,
+} from "@/lib/product";
 import { ProductHero } from "@/components/ProductHero";
 import { Accordion } from "@/components/Accordion";
 import { Reviews } from "@/components/Reviews";
 import { FollowInstagram } from "@/components/FollowInstagram";
 import { CheckIcon } from "@/components/icons";
 
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
-
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shop.usha.se";
 
-function ProductJsonLd({ locale }: { locale: string }) {
-  const price = priceForLocale(locale as (typeof routing.locales)[number]);
+export function generateStaticParams() {
+  return routing.locales.flatMap((locale) => PRODUCTS.map((p) => ({ locale, slug: p.slug })));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const product = getProduct(slug);
+  if (!product) return {};
+  const t = await getTranslations({ locale, namespace: `products.${slug}.seo` });
+  return {
+    title: t("title"),
+    description: t("description"),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      images: [{ url: product.colors[0].image }],
+    },
+  };
+}
+
+function ProductJsonLd({ product, name, locale }: { product: Product; name: string; locale: string }) {
+  const price = product.price[currencyForLocale(locale)];
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "Usha Chest Rig — PU Leather Utility Bag",
-    sku: PRODUCT.sku,
-    brand: { "@type": "Brand", name: PRODUCT.brand },
-    material: "PU (vegan) leather",
-    image: PRODUCT.colors.map((c) => `${SITE_URL}${c.image}`),
+    name,
+    sku: product.sku,
+    brand: { "@type": "Brand", name: product.brand },
+    image: product.colors.map((c) => `${SITE_URL}${c.image}`),
     offers: {
       "@type": "Offer",
-      priceCurrency: price.currency.toUpperCase(),
-      price: (price.unitAmount / 100).toFixed(2),
+      priceCurrency: currencyForLocale(locale).toUpperCase(),
+      price: (price.amount / 100).toFixed(2),
       availability: "https://schema.org/InStock",
-      url: `${SITE_URL}/${locale === "sv" ? "" : locale + "/"}${PRODUCT.slug}`,
+      url: `${SITE_URL}/${locale === "sv" ? "" : locale + "/"}${product.slug}`,
       seller: { "@type": "Organization", name: "Usha AB" },
     },
   };
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
   );
 }
 
-function Features() {
-  const t = useTranslations("product");
+function Features({ slug }: { slug: string }) {
+  const t = useTranslations(`products.${slug}`);
   const features = t.raw("features") as string[];
   return (
     <section>
@@ -61,8 +85,8 @@ function Features() {
   );
 }
 
-function Specs() {
-  const t = useTranslations("product");
+function Specs({ slug }: { slug: string }) {
+  const t = useTranslations(`products.${slug}`);
   const includes = t.raw("includes") as string[];
   const rows = ["material", "size", "weight", "fits"] as const;
   return (
@@ -111,28 +135,31 @@ function ShippingAccordion() {
 export default async function ProductPage({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { locale } = await params;
+  const { locale, slug } = await params;
+  const product = getProduct(slug);
+  if (!product) notFound();
   setRequestLocale(locale);
-  await getTranslations({ locale, namespace: "product" });
 
-  const price = priceForLocale(locale as (typeof routing.locales)[number]);
-  currencyForLocale(locale as (typeof routing.locales)[number]); // (currency resolution lives in product.ts)
+  const t = await getTranslations({ locale, namespace: `products.${slug}` });
+  const currency = currencyForLocale(locale);
+  const price = product.price[currency];
 
   return (
     <>
-      <ProductJsonLd locale={locale} />
+      <ProductJsonLd product={product} name={t("name")} locale={locale} />
       <div className="mx-auto max-w-6xl px-4 pt-8 sm:px-6 sm:pt-12">
         <ProductHero
-          colors={[...PRODUCT.colors]}
-          gallery={[...PRODUCT.gallery]}
+          slug={slug}
+          colors={[...product.colors]}
+          gallery={[...product.gallery]}
           priceDisplay={price.display}
-          freeShippingDisplay={price.freeShippingDisplay}
+          freeShippingDisplay={SHIPPING[currency].freeDisplay}
         />
         <div className="mt-16 space-y-14 pb-4">
-          <Features />
-          <Specs />
+          <Features slug={slug} />
+          <Specs slug={slug} />
           <ShippingAccordion />
         </div>
       </div>

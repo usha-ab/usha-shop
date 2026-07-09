@@ -2,21 +2,22 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import type { ColorId, ProductColor } from "@/lib/product";
+import type { ProductColor } from "@/lib/product";
 import { CheckIcon, ShieldIcon, TruckIcon, ReturnIcon } from "./icons";
 
 interface Props {
+  slug: string;
   colors: ProductColor[];
   gallery: string[];
   priceDisplay: string;
   freeShippingDisplay: string;
 }
 
-export function ProductHero({ colors, gallery, priceDisplay, freeShippingDisplay }: Props) {
-  const t = useTranslations("product");
+export function ProductHero({ slug, colors, gallery, priceDisplay, freeShippingDisplay }: Props) {
+  const t = useTranslations(`products.${slug}`);
   const locale = useLocale();
 
-  const [color, setColor] = useState<ColorId>(colors[0].id);
+  const [color, setColor] = useState<string>(colors[0].id);
   // Default hero = the lifestyle shot (gallery[0]); colour shots load on select.
   const [activeImage, setActiveImage] = useState<string>(gallery[0] ?? colors[0].image);
   const [quantity, setQuantity] = useState(1);
@@ -44,7 +45,9 @@ export function ProductHero({ colors, gallery, priceDisplay, freeShippingDisplay
   };
 
   // Strip order: lifestyle hero first, then the colour shots, then extra shots.
-  const thumbnails = [gallery[0], ...colors.map((c) => c.image), ...gallery.slice(1)];
+  const thumbnails = [gallery[0], ...colors.map((c) => c.image), ...gallery.slice(1)].filter(
+    Boolean,
+  ) as string[];
 
   async function checkout() {
     setLoading(true);
@@ -53,7 +56,7 @@ export function ProductHero({ colors, gallery, priceDisplay, freeShippingDisplay
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ colorId: color, quantity, locale }),
+        body: JSON.stringify({ slug, colorId: color, quantity, locale }),
       });
       if (!res.ok) throw new Error("checkout failed");
       const { url } = (await res.json()) as { url: string };

@@ -1,97 +1,97 @@
 // ---------------------------------------------------------------------------
-// Single source of truth for the Usha Chest Rig product.
-// Edit numbers here once — the page, JSON-LD, and Stripe Checkout all read this.
-// [verify] marks values that MUST be confirmed against the supplier listing.
+// Product registry — single source of truth for every product in Usha Shop.
+// Commercial values (price, colours, images, CJ variant ids) live here; all
+// copy lives per-product in src/messages/*.json under `products.<slug>`.
+// [verify]/interim values are refined when CJ sources each product.
 // ---------------------------------------------------------------------------
 
-import type { Locale } from "@/i18n/routing";
-
-export type ColorId = "brown" | "olive" | "black";
+export type Currency = "sek" | "eur";
 
 export interface ProductColor {
-  id: ColorId;
-  /** Swatch hex shown in the color selector. */
+  /** Colour id — must match a key in messages `products.<slug>.colorNames`. */
+  id: string;
+  /** Swatch hex shown in the colour selector. */
   swatch: string;
-  /** Hero image for this color (drop real photos into /public/images). */
+  /** Image for this colour (drop real photos into /public/images). */
   image: string;
-  /**
-   * CJdropshipping variant id (VID) for this colour. Filled in after you
-   * source the product in CJ — the fulfilment webhook orders by this id.
-   * Empty until then (fulfilment falls back to logging).
-   */
+  /** CJdropshipping variant id (VID); filled after sourcing. "" = log only. */
   cjVid: string;
 }
 
-export const PRODUCT = {
-  /** Stable SKU / slug — also the URL path. */
-  slug: "usha-chest-rig",
-  sku: "USHA-CR-001",
-  /** Brand for JSON-LD. */
-  brand: "Usha",
-  colors: [
-    // black/brown = real supplier photos (interim, from the AliExpress source
-    // listing); olive is the black shot recoloured to olive (duotone) so it
-    // matches the framing until CJ's real olive photo lands.
-    { id: "brown", swatch: "#6b4a2b", image: "/images/chest-rig-brown.jpg", cjVid: "" },
-    { id: "olive", swatch: "#4b5320", image: "/images/chest-rig-olive.jpg", cjVid: "" },
-    { id: "black", swatch: "#141414", image: "/images/chest-rig-black.jpg", cjVid: "" },
-  ] as ProductColor[],
-  /**
-   * Gallery shots shared across colours. gallery[0] is the lifestyle hero —
-   * shown first / by default; the rest follow the colour shots in the strip.
-   */
-  gallery: [
-    "/images/chest-rig-worn.jpg",
-    "/images/chest-rig-detail.jpg",
-  ],
-} as const;
-
-// --- Pricing -----------------------------------------------------------------
-// Amounts are in the currency's minor unit (öre / cents) for Stripe.
-export type Currency = "sek" | "eur";
-
 interface PriceInfo {
-  currency: Currency;
-  /** Unit price in minor units (öre / cents). */
-  unitAmount: number;
-  /** Free-shipping threshold in minor units. */
-  freeShippingThreshold: number;
-  /** Flat shipping charged below the threshold, in minor units. */
-  shippingFee: number;
+  /** Unit price in the currency's minor unit (öre / cents) for Stripe. */
+  amount: number;
   /** Human display, e.g. "399 kr" / "€35". */
   display: string;
-  freeShippingDisplay: string;
 }
 
-export const PRICING: Record<Currency, PriceInfo> = {
-  sek: {
-    currency: "sek",
-    unitAmount: 39900, // 399 kr
-    freeShippingThreshold: 60000, // 600 kr
-    shippingFee: 4900, // 49 kr flat under threshold
-    display: "399 kr",
-    freeShippingDisplay: "600 kr",
-  },
-  eur: {
-    currency: "eur",
-    unitAmount: 3500, // €35 (≈ 399 kr)
-    freeShippingThreshold: 5900, // €59
-    shippingFee: 490, // €4.90 flat under threshold
-    display: "€35",
-    freeShippingDisplay: "€59",
-  },
+export interface Product {
+  /** URL slug + i18n namespace key. */
+  slug: string;
+  sku: string;
+  brand: string;
+  price: Record<Currency, PriceInfo>;
+  colors: ProductColor[];
+  /** Shared gallery shots. gallery[0] = lifestyle hero (shown first). */
+  gallery: string[];
+}
+
+// --- Shipping (shared across products) ---------------------------------------
+export const SHIPPING: Record<Currency, { freeThreshold: number; fee: number; freeDisplay: string }> = {
+  sek: { freeThreshold: 60000, fee: 4900, freeDisplay: "600 kr" },
+  eur: { freeThreshold: 5900, fee: 490, freeDisplay: "€59" },
 };
 
-/** CJ variant id for a colour, or "" if not sourced/mapped yet. */
-export function cjVidForColor(colorId: string): string {
-  return PRODUCT.colors.find((c) => c.id === colorId)?.cjVid ?? "";
+// --- The catalog -------------------------------------------------------------
+export const PRODUCTS: Product[] = [
+  {
+    slug: "usha-chest-rig",
+    sku: "USHA-CR-001",
+    brand: "Usha",
+    price: { sek: { amount: 39900, display: "399 kr" }, eur: { amount: 3500, display: "€35" } },
+    colors: [
+      { id: "brown", swatch: "#6b4a2b", image: "/images/chest-rig-brown.jpg", cjVid: "" },
+      { id: "olive", swatch: "#4b5320", image: "/images/chest-rig-olive.jpg", cjVid: "" },
+      { id: "black", swatch: "#141414", image: "/images/chest-rig-black.jpg", cjVid: "" },
+    ],
+    gallery: ["/images/chest-rig-worn.jpg", "/images/chest-rig-detail.jpg"],
+  },
+  {
+    slug: "usha-belt-bag",
+    sku: "USHA-BB-001",
+    brand: "Usha",
+    // Interim price (retail ref ~258–429 kr). Real photos + CJ variants pending.
+    price: { sek: { amount: 34900, display: "349 kr" }, eur: { amount: 3200, display: "€32" } },
+    colors: [
+      { id: "brown", swatch: "#5a4632", image: "/images/belt-bag-brown.jpg", cjVid: "" },
+      { id: "black", swatch: "#141414", image: "/images/belt-bag-black.jpg", cjVid: "" },
+    ],
+    gallery: [],
+  },
+];
+
+// --- Helpers -----------------------------------------------------------------
+export function getProduct(slug: string): Product | undefined {
+  return PRODUCTS.find((p) => p.slug === slug);
 }
 
 /** Swedish shoppers pay in SEK; English/Spanish default to EUR. */
-export function currencyForLocale(locale: Locale): Currency {
+export function currencyForLocale(locale: string): Currency {
   return locale === "sv" ? "sek" : "eur";
 }
 
-export function priceForLocale(locale: Locale): PriceInfo {
-  return PRICING[currencyForLocale(locale)];
+/** Ordered image strip: lifestyle hero first, then colour shots, then extras. */
+export function galleryFor(product: Product): { hero: string; thumbnails: string[] } {
+  const hero = product.gallery[0] ?? product.colors[0].image;
+  const thumbnails = [
+    product.gallery[0],
+    ...product.colors.map((c) => c.image),
+    ...product.gallery.slice(1),
+  ].filter(Boolean) as string[];
+  return { hero, thumbnails };
+}
+
+/** CJ variant id for a colour, or "" if not sourced/mapped yet. */
+export function cjVidForColor(product: Product, colorId: string): string {
+  return product.colors.find((c) => c.id === colorId)?.cjVid ?? "";
 }
