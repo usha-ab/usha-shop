@@ -51,14 +51,11 @@ if (!variants || !variants.length) {
   process.exit(1);
 }
 
-console.log("\n  colour / variant            VID                     SKU");
-console.log("  " + "-".repeat(64));
 for (const v of variants) {
   const name = (v.variantKey || v.variantNameEn || v.variantName || "?").toString();
-  console.log(
-    "  " + name.padEnd(26) + " " + String(v.vid).padEnd(22) + "  " + (v.variantSku || "")
-  );
+  const img = v.variantImage || v.variantImg || (Array.isArray(v.variantImages) ? v.variantImages[0] : "") || "";
+  console.log(`${name}\t${v.vid}\t${img}`);
 }
 console.log(
-  "\nPaste the colour → VID lines back to Claude. Map: brown→brown, olive→army green, black→black.\n"
+  "\n(Each line: colour <tab> VID <tab> image URL. Paste the whole block back to Claude — none of it is secret.)\n"
 );

@@ -40,7 +40,7 @@
     },
     "materialNote": "Vegan leather (PU) — not genuine leather.",
     "colorsLabel": "Colour",
-    "colorNames": { "brown": "Brown", "olive": "Olive", "black": "Black" },
+    "colorNames": { "brown": "Brown", "olive": "Olive", "black": "Black", "tan": "Tan", "winered": "Wine red", "emerald": "Emerald green", "yellow": "Yellow", "pink": "Pink" },
     "quantityLabel": "Quantity",
     "cta": "Add to cart",
     "ctaLoading": "Opening checkout…",
@@ -51,7 +51,7 @@
     "trustReturns": "14-day returns",
     "seo": {
       "title": "Usha Chest Rig – PU Leather Utility Bag | Usha Shop",
-      "description": "Clean PU leather chest rig for phone, wallet & keys. Brown, olive or black. Free shipping over €59. 14-day returns."
+      "description": "Clean PU leather chest rig for phone, wallet & keys. Available in 8 colours. Free shipping over €59. 14-day returns."
     }
     },
     "usha-belt-bag": {
