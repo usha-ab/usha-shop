@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { getStripe } from "@/lib/stripe";
 import { getProduct, currencyForLocale, SHIPPING } from "@/lib/product";
 import { routing } from "@/i18n/routing";
+import { getPlatformUser } from "@/lib/platform-session";
 
 export const runtime = "nodejs";
 
@@ -56,11 +57,17 @@ export async function POST(req: Request) {
   const t = await getTranslations({ locale: activeLocale, namespace: `products.${product.slug}` });
   const name = t("name");
 
+  // If a logged-in Usha Platform user is shopping (shared .usha.se session),
+  // prefill their email at checkout. Guests / unconfigured auth → undefined.
+  const platformUser = await getPlatformUser();
+  const customerEmail = platformUser?.email ?? undefined;
+
   try {
     const stripe = getStripe();
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       locale: activeLocale as "sv" | "en" | "es",
+      ...(customerEmail ? { customer_email: customerEmail } : {}),
       // Payment methods (Klarna / cards / Apple Pay / Google Pay) are presented
       // automatically per the methods enabled on the platform Stripe account.
       line_items: [

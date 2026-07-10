@@ -4,6 +4,7 @@ import { Logo } from "./Logo";
 import { InstagramIcon } from "./icons";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { ThemeToggle } from "./ThemeToggle";
+import { AccountBadge } from "./AccountBadge";
 
 const INSTAGRAM_URL = "https://instagram.com/usha.shop";
 
@@ -21,6 +22,7 @@ export function Header() {
         </Link>
 
         <div className="flex items-center gap-4">
+          <AccountBadge />
           <a
             href={INSTAGRAM_URL}
             target="_blank"
