@@ -13,11 +13,14 @@
 // ---------------------------------------------------------------------------
 import { cookies } from "next/headers";
 import { createServerClient } from "@supabase/ssr";
+import type { MemberTier } from "./member-discount";
 
 export interface PlatformUser {
   id: string;
   email: string | null;
   name: string | null;
+  /** Membership tier from the platform's profiles table (drives shop discounts). */
+  tier: MemberTier;
 }
 
 export function isPlatformAuthConfigured(): boolean {
@@ -72,7 +75,16 @@ export async function getPlatformUser(): Promise<PlatformUser | null> {
       (meta.name as string | undefined) ??
       null;
 
-    return { id: data.user.id, email: data.user.email ?? null, name };
+    // Membership tier lives on the platform's profiles table; RLS scopes the
+    // read to the user's own row. Default to "gratis" on any miss.
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("tier")
+      .eq("id", data.user.id)
+      .single();
+    const tier = ((profile?.tier as MemberTier | undefined) ?? "gratis") as MemberTier;
+
+    return { id: data.user.id, email: data.user.email ?? null, name, tier };
   } catch {
     return null;
   }

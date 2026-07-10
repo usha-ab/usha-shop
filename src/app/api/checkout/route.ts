@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 import { getTranslations } from "next-intl/server";
-import { getStripe } from "@/lib/stripe";
+import { getStripe, getMemberDiscountCoupon } from "@/lib/stripe";
 import { getProduct, currencyForLocale, SHIPPING } from "@/lib/product";
 import { routing } from "@/i18n/routing";
 import { getPlatformUser } from "@/lib/platform-session";
+import { memberDiscountPercent } from "@/lib/member-discount";
 
 export const runtime = "nodejs";
 
@@ -64,10 +65,27 @@ export async function POST(req: Request) {
 
   try {
     const stripe = getStripe();
+
+    // Membership perk: Guld/Premium members get a percentage off, applied as a
+    // Stripe coupon so the discount shows as its own line in Checkout. Returns 0
+    // (no discount) unless NEXT_PUBLIC_DISCOUNTS_ENABLED=true AND the member
+    // qualifies — so this is inert during the free beta.
+    const discountPercent = memberDiscountPercent(platformUser?.tier);
+    let couponId: string | null = null;
+    if (discountPercent > 0) {
+      try {
+        couponId = await getMemberDiscountCoupon(stripe, discountPercent);
+      } catch (err) {
+        // A coupon hiccup must never block a purchase — fall back to full price.
+        console.error("[checkout] member coupon failed, proceeding without discount:", err);
+      }
+    }
+
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       locale: activeLocale as "sv" | "en" | "es",
       ...(customerEmail ? { customer_email: customerEmail } : {}),
+      ...(couponId ? { discounts: [{ coupon: couponId }] } : {}),
       // Payment methods (Klarna / cards / Apple Pay / Google Pay) are presented
       // automatically per the methods enabled on the platform Stripe account.
       line_items: [
@@ -108,6 +126,8 @@ export async function POST(req: Request) {
         color: color.id,
         quantity: String(qty),
         locale: activeLocale,
+        memberTier: platformUser?.tier ?? "guest",
+        discountPercent: String(discountPercent),
       },
       success_url: localeUrl(activeLocale, "/success?session_id={CHECKOUT_SESSION_ID}"),
       cancel_url: localeUrl(activeLocale, "/cancel"),
