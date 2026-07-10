@@ -15,6 +15,7 @@ export async function GET() {
   return NextResponse.json(
     {
       signedIn: Boolean(user),
+      name: user?.name ?? user?.email ?? null,
       tier: user?.tier ?? null,
       discountPercent,
     },
