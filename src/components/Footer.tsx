@@ -6,6 +6,8 @@ import { PaymentBadges } from "./PaymentBadges";
 
 const INSTAGRAM_URL = "https://instagram.com/usha.shop";
 const CONTACT_EMAIL = "pablo.acosta@usha.se";
+// Reciprocal link back to the main platform (creators-platform at usha.se).
+const PLATFORM_URL = "https://usha.se";
 
 export function Footer() {
   const t = useTranslations("footer");
@@ -41,6 +43,12 @@ export function Footer() {
             >
               <InstagramIcon className="h-4 w-4" />
               @usha.shop
+            </a>
+            <a
+              href={PLATFORM_URL}
+              className="mt-4 block text-sm font-medium text-muted transition-colors hover:text-gold"
+            >
+              {t("platform")} →
             </a>
           </div>
 
