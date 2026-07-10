@@ -15,3 +15,30 @@ export function getStripe(): Stripe {
   cached = new Stripe(key);
   return cached;
 }
+
+/**
+ * Get-or-create a reusable percent-off coupon for a member discount, keyed by
+ * a deterministic id (e.g. "usha-member-10"). The first discounted checkout
+ * creates it; every later one reuses it — so no manual Stripe setup is needed
+ * and the account never accumulates duplicate coupons. Returns the coupon id.
+ */
+export async function getMemberDiscountCoupon(
+  stripe: Stripe,
+  percentOff: number,
+): Promise<string> {
+  const id = `usha-member-${percentOff}`;
+  try {
+    await stripe.coupons.retrieve(id);
+  } catch {
+    // Not found (or first use) — create it with the fixed id. `duration` is
+    // required by Stripe but only affects subscriptions; one-time charges apply
+    // the percent once regardless.
+    await stripe.coupons.create({
+      id,
+      percent_off: percentOff,
+      duration: "forever",
+      name: `Usha medlemsrabatt ${percentOff}%`,
+    });
+  }
+  return id;
+}
