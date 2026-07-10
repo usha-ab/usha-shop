@@ -5,7 +5,8 @@
   "nav": {
     "home": "Home",
     "shop": "Shop",
-    "instagram": "Follow @usha.shop on Instagram"
+    "instagram": "Follow @usha.shop on Instagram",
+    "signedInAs": "Signed in as {name}"
   },
   "catalog": {
     "heading": "Usha Shop",
