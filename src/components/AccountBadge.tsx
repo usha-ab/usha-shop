@@ -2,42 +2,34 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { createPlatformBrowserClient } from "@/lib/supabase-browser";
 
-// Small storefront indicator: "Signed in as …" when a logged-in Usha Platform
-// user is browsing the shop (shared .usha.se session). Renders nothing for
-// guests or when auth isn't configured — keeps the storefront static/cacheable
-// (this hydrates client-side only, no per-request cookie read on the pages).
+// "Signed in as …" indicator when a logged-in Usha Platform member is browsing
+// the shop (shared .usha.se session). Reads identity from the same-origin
+// /api/me endpoint (server-side, read-only) — the shop keeps NO client-side
+// Supabase session, so it can never refresh, rotate, or clear the platform's
+// auth cookie. Renders nothing for guests / when auth isn't configured.
 export function AccountBadge() {
   const t = useTranslations("nav");
-  const [label, setLabel] = useState<string | null>(null);
+  const [name, setName] = useState<string | null>(null);
 
   useEffect(() => {
-    const supabase = createPlatformBrowserClient();
-    if (!supabase) return;
-
     let active = true;
-    supabase.auth.getSession().then(({ data }) => {
-      const user = data.session?.user;
-      if (!active || !user) return;
-      const meta = user.user_metadata ?? {};
-      const name =
-        (meta.full_name as string | undefined) ??
-        (meta.name as string | undefined) ??
-        user.email ??
-        null;
-      if (name) setLabel(name);
-    });
+    fetch("/api/me")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (active && d && d.signedIn && d.name) setName(d.name);
+      })
+      .catch(() => {});
     return () => {
       active = false;
     };
   }, []);
 
-  if (!label) return null;
+  if (!name) return null;
 
   return (
-    <span className="hidden text-xs text-muted sm:inline" title={label}>
-      {t("signedInAs", { name: label })}
+    <span className="hidden text-xs text-muted sm:inline" title={name}>
+      {t("signedInAs", { name })}
     </span>
   );
 }
