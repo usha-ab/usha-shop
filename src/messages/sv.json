@@ -8,6 +8,9 @@
     "instagram": "Följ @usha.shop på Instagram",
     "signedInAs": "Inloggad som {name}"
   },
+  "member": {
+    "discountBanner": "Din medlemsrabatt −{percent}% dras automatiskt i kassan"
+  },
   "catalog": {
     "heading": "Usha Shop",
     "subheading": "Lifestyle-accessoarer i veganläder. Mindre stök, mer stil.",

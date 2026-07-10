@@ -8,6 +8,9 @@
     "instagram": "Follow @usha.shop on Instagram",
     "signedInAs": "Signed in as {name}"
   },
+  "member": {
+    "discountBanner": "Your −{percent}% member discount is applied at checkout"
+  },
   "catalog": {
     "heading": "Usha Shop",
     "subheading": "Vegan-leather lifestyle accessories. Less clutter, more class.",

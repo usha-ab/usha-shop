@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import type { ProductColor } from "@/lib/product";
 import { CheckIcon, ShieldIcon, TruckIcon, ReturnIcon } from "./icons";
+import { MemberDiscountBanner } from "./MemberDiscountBanner";
 
 interface Props {
   slug: string;
@@ -114,6 +115,8 @@ export function ProductHero({ slug, colors, gallery, priceDisplay, freeShippingD
             {t("freeShipping", { threshold: freeShippingDisplay })}
           </span>
         </div>
+
+        <MemberDiscountBanner />
 
         {/* Color selector */}
         <div className="mt-8">
