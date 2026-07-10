@@ -8,6 +8,9 @@
     "instagram": "Sigue a @usha.shop en Instagram",
     "signedInAs": "Sesión iniciada como {name}"
   },
+  "member": {
+    "discountBanner": "Tu descuento de socio del −{percent}% se aplica al finalizar la compra"
+  },
   "catalog": {
     "heading": "Usha Shop",
     "subheading": "Accesorios lifestyle en piel vegana. Menos desorden, más estilo.",
