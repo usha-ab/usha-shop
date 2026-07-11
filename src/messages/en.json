@@ -9,7 +9,8 @@
     "signedInAs": "Signed in as {name}"
   },
   "member": {
-    "discountBanner": "Your −{percent}% member discount is applied at checkout"
+    "discountBanner": "Your −{percent}% member discount is applied at checkout",
+    "joinForDiscount": "Become a member on Usha and get up to {percent}% off →"
   },
   "catalog": {
     "heading": "Usha Shop",
