@@ -60,28 +60,28 @@
     },
     "usha-belt-bag": {
       "name": "Usha Belt Bag — PU Leather Waist Belt",
-      "tagline": "A slim belt with two pouches. Phone, cards, keys — hands free.",
-      "description": "The Usha Belt Bag turns a belt into your bag. A slim PU-leather waist belt with two pouches — a flap pocket and a phone sleeve — plus a handy key clip. Wear it high on the waist over a dress or jeans. Less bag. More look.",
+      "tagline": "A slim belt with a pouch. Phone, cards, keys — hands free.",
+      "description": "The Usha Belt Bag turns a belt into your bag. A slim PU-leather belt with a snap-flap pouch and a pin buckle. Wear it high on the waist over a dress or jeans — or across the chest. Less bag. More look.",
       "featuresHeading": "What you get",
       "features": [
-        "Slim belt with two pouches (flap pocket + phone sleeve)",
-        "Handy key clip",
+        "Slim belt bag with a snap-flap pouch",
+        "Gold-tone pin buckle",
         "Soft PU leather (vegan leather)",
-        "Adjustable fit, worn on the waist",
-        "Gold-tone hardware"
+        "Adjustable strap — worn at the waist or across the chest",
+        "Compact: ~20 × 10 × 5 cm"
       ],
       "includesHeading": "In the box",
-      "includes": ["Usha Belt Bag in your chosen colour (belt + 2 pouches)"],
+      "includes": ["Usha Belt Bag in your chosen colour (belt + pouch)"],
       "specsHeading": "Specs",
       "specs": {
         "material": { "label": "Material", "value": "PU leather (vegan leather), metal hardware" },
-        "size": { "label": "Size", "value": "adjustable waist ~75–110 cm · pouch ~11 × 15 cm" },
-        "weight": { "label": "Weight", "value": "approx. 250 g" },
+        "size": { "label": "Size", "value": "adjustable strap · bag ~20 × 10 × 5 cm" },
+        "weight": { "label": "Weight", "value": "approx. 160 g" },
         "fits": { "label": "Fits", "value": "Phone, cards, keys, lip balm, cash" }
       },
       "materialNote": "PU leather (vegan leather) — not genuine leather.",
       "colorsLabel": "Colour",
-      "colorNames": { "black": "Black", "brown": "Brown", "tan": "Tan", "beige": "Beige", "sage": "Sage green", "white": "White" },
+      "colorNames": { "black": "Black", "cream": "Cream", "pink": "Pink", "grey": "Grey", "nude": "Nude" },
       "quantityLabel": "Quantity",
       "cta": "Add to cart",
       "ctaLoading": "Opening checkout…",
@@ -92,7 +92,7 @@
       "trustReturns": "14-day returns",
       "seo": {
         "title": "Usha Belt Bag – PU Leather Waist Belt | Usha Shop",
-        "description": "Slim PU-leather waist belt with two pouches and a key clip. 6 colours. Free shipping over €59. 14-day returns."
+        "description": "Slim PU-leather belt bag with a snap-flap pouch and pin buckle. 5 colours. Free shipping over €59. 14-day returns."
       }
     }
   },
