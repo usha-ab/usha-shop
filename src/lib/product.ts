@@ -65,16 +65,15 @@ export const PRODUCTS: Product[] = [
     slug: "usha-belt-bag",
     sku: "USHA-BB-001",
     brand: "Usha",
-    // Slim PU belt with two pouches + key clip (AliExpress ref 1005010216674419).
+    // Slim PU leather belt bag, pin buckle, snap-flap pouch (AliExpress ref 1005008516610559).
     // Interim placeholder photos + empty cjVid — swapped when CJ sourcing lands.
     price: { sek: { amount: 34900, display: "349 kr" }, eur: { amount: 3200, display: "€32" } },
     colors: [
       { id: "black", swatch: "#141414", image: "/images/belt-bag-placeholder.jpg", cjVid: "" },
-      { id: "brown", swatch: "#5a4632", image: "/images/belt-bag-placeholder.jpg", cjVid: "" },
-      { id: "tan", swatch: "#b07a4f", image: "/images/belt-bag-placeholder.jpg", cjVid: "" },
-      { id: "beige", swatch: "#d8c4a5", image: "/images/belt-bag-placeholder.jpg", cjVid: "" },
-      { id: "sage", swatch: "#9caf88", image: "/images/belt-bag-placeholder.jpg", cjVid: "" },
-      { id: "white", swatch: "#eeece7", image: "/images/belt-bag-placeholder.jpg", cjVid: "" },
+      { id: "cream", swatch: "#e8e2d6", image: "/images/belt-bag-placeholder.jpg", cjVid: "" },
+      { id: "pink", swatch: "#e3a9b4", image: "/images/belt-bag-placeholder.jpg", cjVid: "" },
+      { id: "grey", swatch: "#8f8b86", image: "/images/belt-bag-placeholder.jpg", cjVid: "" },
+      { id: "nude", swatch: "#d9b79c", image: "/images/belt-bag-placeholder.jpg", cjVid: "" },
     ],
     gallery: [],
   },

@@ -60,28 +60,28 @@
     },
     "usha-belt-bag": {
       "name": "Usha Belt Bag — Midjebälte i PU-läder",
-      "tagline": "Ett smalt bälte med två fickor. Telefon, kort, nycklar — händerna fria.",
-      "description": "Usha Belt Bag gör bältet till din väska. Ett smalt midjebälte i PU-läder med två fickor – en flik-ficka och en telefonficka – plus ett smidigt nyckelspänne. Bär det högt i midjan över klänningen eller jeansen. Mindre väska. Mer look.",
+      "tagline": "Ett smalt bälte med ficka. Telefon, kort, nycklar — händerna fria.",
+      "description": "Usha Belt Bag gör bältet till din väska. Ett smalt bälte i PU-läder med en flik-ficka och pin-spänne. Bär det högt i midjan över klänningen eller jeansen – eller diagonalt över bröstet. Mindre väska. Mer look.",
       "featuresHeading": "Detta får du",
       "features": [
-        "Smalt bälte med två fickor (flik-ficka + telefonficka)",
-        "Smidigt nyckelspänne",
+        "Smal bältesväska med flik-ficka",
+        "Pin-spänne i guldton",
         "Mjukt PU-läder (veganläder)",
-        "Justerbar passform, bärs i midjan",
-        "Detaljer i guldton"
+        "Justerbar rem – bärs i midjan eller över bröstet",
+        "Kompakt: ~20 × 10 × 5 cm"
       ],
       "includesHeading": "I lådan",
-      "includes": ["Usha Belt Bag i vald färg (bälte + 2 fickor)"],
+      "includes": ["Usha Belt Bag i vald färg (bälte + ficka)"],
       "specsHeading": "Specifikation",
       "specs": {
         "material": { "label": "Material", "value": "PU-läder (veganläder), metalldetaljer" },
-        "size": { "label": "Mått", "value": "justerbar midja ~75–110 cm · ficka ~11 × 15 cm" },
-        "weight": { "label": "Vikt", "value": "ca 250 g" },
+        "size": { "label": "Mått", "value": "justerbar rem · väska ~20 × 10 × 5 cm" },
+        "weight": { "label": "Vikt", "value": "ca 160 g" },
         "fits": { "label": "Rymmer", "value": "Telefon, kort, nycklar, läppstift, kontanter" }
       },
       "materialNote": "PU-läder (veganläder) – inte äkta läder.",
       "colorsLabel": "Färg",
-      "colorNames": { "black": "Svart", "brown": "Brun", "tan": "Ljusbrun", "beige": "Beige", "sage": "Salviagrön", "white": "Vit" },
+      "colorNames": { "black": "Svart", "cream": "Creme", "pink": "Rosa", "grey": "Grå", "nude": "Nude" },
       "quantityLabel": "Antal",
       "cta": "Lägg i varukorg",
       "ctaLoading": "Öppnar kassan…",
@@ -92,7 +92,7 @@
       "trustReturns": "14 dagars ångerrätt",
       "seo": {
         "title": "Usha Belt Bag – Midjebälte i PU-läder | Usha Shop",
-        "description": "Smalt midjebälte i PU-läder med två fickor och nyckelspänne. 6 färger. Fri frakt över 600 kr. 14 dagars ångerrätt."
+        "description": "Smalt bälte i PU-läder med flik-ficka och pin-spänne. 5 färger. Fri frakt över 600 kr. 14 dagars ångerrätt."
       }
     }
   },

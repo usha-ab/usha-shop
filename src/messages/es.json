@@ -60,28 +60,28 @@
     },
     "usha-belt-bag": {
       "name": "Usha Belt Bag — Cinturón de cintura en piel PU",
-      "tagline": "Un cinturón fino con dos bolsillos. Móvil, tarjetas, llaves — manos libres.",
-      "description": "El Usha Belt Bag convierte el cinturón en tu bolso. Un cinturón fino de piel PU con dos bolsillos —uno con solapa y otro para el móvil— y un práctico mosquetón para llaves. Llévalo alto en la cintura sobre un vestido o unos vaqueros. Menos bolso. Más look.",
+      "tagline": "Un cinturón fino con bolsillo. Móvil, tarjetas, llaves — manos libres.",
+      "description": "El Usha Belt Bag convierte el cinturón en tu bolso. Un cinturón fino de piel PU con un bolsillo de solapa y hebilla de pin. Llévalo alto en la cintura sobre un vestido o unos vaqueros — o cruzado en el pecho. Menos bolso. Más look.",
       "featuresHeading": "Qué incluye",
       "features": [
-        "Cinturón fino con dos bolsillos (solapa + funda de móvil)",
-        "Práctico mosquetón para llaves",
+        "Bolso de cinturón fino con bolsillo de solapa",
+        "Hebilla de pin en tono dorado",
         "Piel PU suave (piel vegana)",
-        "Ajuste regulable, se lleva en la cintura",
-        "Herrajes en tono dorado"
+        "Correa regulable — en la cintura o cruzada en el pecho",
+        "Compacto: ~20 × 10 × 5 cm"
       ],
       "includesHeading": "En la caja",
-      "includes": ["Usha Belt Bag en el color elegido (cinturón + 2 bolsillos)"],
+      "includes": ["Usha Belt Bag en el color elegido (cinturón + bolsillo)"],
       "specsHeading": "Especificaciones",
       "specs": {
         "material": { "label": "Material", "value": "Piel PU (piel vegana), herrajes de metal" },
-        "size": { "label": "Medidas", "value": "cintura regulable ~75–110 cm · bolsillo ~11 × 15 cm" },
-        "weight": { "label": "Peso", "value": "aprox. 250 g" },
+        "size": { "label": "Medidas", "value": "correa regulable · bolso ~20 × 10 × 5 cm" },
+        "weight": { "label": "Peso", "value": "aprox. 160 g" },
         "fits": { "label": "Cabe", "value": "Móvil, tarjetas, llaves, pintalabios, efectivo" }
       },
       "materialNote": "Piel PU (piel vegana) — no es piel auténtica.",
       "colorsLabel": "Color",
-      "colorNames": { "black": "Negro", "brown": "Marrón", "tan": "Marrón claro", "beige": "Beige", "sage": "Verde salvia", "white": "Blanco" },
+      "colorNames": { "black": "Negro", "cream": "Crema", "pink": "Rosa", "grey": "Gris", "nude": "Nude" },
       "quantityLabel": "Cantidad",
       "cta": "Añadir al carrito",
       "ctaLoading": "Abriendo el pago…",
@@ -92,7 +92,7 @@
       "trustReturns": "14 días de devolución",
       "seo": {
         "title": "Usha Belt Bag – Cinturón de cintura en piel PU | Usha Shop",
-        "description": "Cinturón fino de piel PU con dos bolsillos y mosquetón. 6 colores. Envío gratis desde €59. 14 días de devolución."
+        "description": "Bolso de cinturón fino de piel PU con bolsillo de solapa y hebilla de pin. 5 colores. Envío gratis desde €59. 14 días de devolución."
       }
     }
   },
