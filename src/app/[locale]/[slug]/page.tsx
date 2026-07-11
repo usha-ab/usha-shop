@@ -31,13 +31,33 @@ export async function generateMetadata({
   const product = getPublishedProduct(slug);
   if (!product) return {};
   const t = await getTranslations({ locale, namespace: `products.${slug}.seo` });
+
+  // Canonical + hreflang so the same product across sv/en/es isn't treated as
+  // duplicate content (next-intl doesn't inject these automatically).
+  const productUrl = (loc: string) =>
+    `${SITE_URL}${loc === routing.defaultLocale ? "" : `/${loc}`}/${slug}`;
+  const languages: Record<string, string> = Object.fromEntries(
+    routing.locales.map((l) => [l, productUrl(l)]),
+  );
+  languages["x-default"] = productUrl(routing.defaultLocale);
+
+  // Use the lifestyle hero (gallery[0]) for social cards, not the flat packshot.
+  const ogImage = `${SITE_URL}${product.gallery[0] ?? product.colors[0].image}`;
+
   return {
     title: t("title"),
     description: t("description"),
+    alternates: { canonical: productUrl(locale), languages },
     openGraph: {
       title: t("title"),
       description: t("description"),
-      images: [{ url: product.colors[0].image }],
+      images: [{ url: ogImage, width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: [ogImage],
     },
   };
 }

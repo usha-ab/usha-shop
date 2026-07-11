@@ -24,6 +24,12 @@ function localeUrl(locale: string, path: string): string {
 }
 
 export async function POST(req: Request) {
+  // Throttle — each call creates a live Stripe Checkout Session.
+  const { rateLimit, clientKey } = await import("@/lib/rate-limit");
+  if (!rateLimit(clientKey(req, "checkout"), 10, 60_000)) {
+    return NextResponse.json({ error: "rate_limited" }, { status: 429 });
+  }
+
   let body: { slug?: string; colorId?: string; quantity?: number; locale?: string };
   try {
     body = await req.json();
@@ -97,7 +103,7 @@ export async function POST(req: Request) {
             unit_amount: price.amount,
             product_data: {
               name,
-              description: `Color: ${color.id}`,
+              description: t(`colorNames.${color.id}`),
               images: [`${SITE_URL}${color.image}`],
               metadata: { sku: product.sku, slug: product.slug, color: color.id },
             },

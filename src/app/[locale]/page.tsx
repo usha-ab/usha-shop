@@ -1,10 +1,28 @@
+import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { PUBLISHED_PRODUCTS, currencyForLocale, galleryFor } from "@/lib/product";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shop.usha.se";
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
+}
+
+// Canonical + hreflang for the storefront root across sv/en/es.
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const homeUrl = (loc: string) => `${SITE_URL}${loc === routing.defaultLocale ? "" : `/${loc}`}`;
+  const languages: Record<string, string> = Object.fromEntries(
+    routing.locales.map((l) => [l, homeUrl(l)]),
+  );
+  languages["x-default"] = homeUrl(routing.defaultLocale);
+  return { alternates: { canonical: homeUrl(locale), languages } };
 }
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
