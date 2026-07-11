@@ -19,44 +19,65 @@
   },
   "products": {
     "usha-chest-rig": {
-    "name": "Usha Chest Rig — Bolso utilitario de piel PU",
-    "tagline": "Todo lo que necesitas, pegado al cuerpo. Sin cargar los bolsillos.",
-    "description": "El Usha Chest Rig es la respuesta elegante a \"¿dónde pongo mis cosas?\". Un chest rig de piel PU suave que lleva tu móvil, cartera, llaves y powerbank — sin que lo notes. Arnés cruzado ajustable que queda igual de bien sobre una sudadera que sobre un blazer. Menos desorden. Más estilo.",
-    "featuresHeading": "Qué incluye",
-    "features": [
-      "2 bolsillos + compartimento con cremallera para guardar con orden",
-      "Arnés cruzado ajustable — se adapta a la mayoría de cuerpos",
-      "Piel PU (vegana) suave y resistente con cremalleras metálicas",
-      "Se mantiene firme al moverte — para la ciudad, viajes y festivales",
-      "Llega en una bolsa de tela Usha"
-    ],
-    "includesHeading": "En la caja",
-    "includes": [
-      "Usha Chest Rig en el color elegido",
-      "Bolsa de tela Usha (dust bag)"
-    ],
-    "specsHeading": "Especificaciones",
-    "specs": {
-      "material": { "label": "Material", "value": "Piel PU (vegana), detalles metálicos" },
-      "size": { "label": "Medidas", "value": "aprox. 22 × 18 cm · arnés ajustable hasta ~120 cm" },
-      "weight": { "label": "Peso", "value": "aprox. 300 g" },
-      "fits": { "label": "Cabe", "value": "Móvil de hasta 6,7\", cartera, llaves, powerbank, pasaporte" }
-    },
-    "materialNote": "Piel vegana (PU) — no es piel auténtica.",
-    "colorsLabel": "Color",
-    "colorNames": { "brown": "Marrón", "olive": "Verde oliva", "black": "Negro", "tan": "Marrón claro", "winered": "Rojo vino", "emerald": "Verde esmeralda", "yellow": "Amarillo", "pink": "Rosa" },
-    "quantityLabel": "Cantidad",
-    "cta": "Añadir al carrito",
-    "ctaLoading": "Abriendo el pago…",
-    "freeShipping": "Envío gratis a partir de {threshold}",
-    "checkoutError": "Algo salió mal en el pago. Inténtalo de nuevo.",
-    "trustSecure": "Pago seguro",
-    "trustShipping": "Envío con seguimiento",
-    "trustReturns": "14 días de devolución",
-    "seo": {
-      "title": "Usha Chest Rig – Bolso utilitario de piel PU | Usha Shop",
-      "description": "Chest rig de piel PU para móvil, cartera y llaves. Disponible en 8 colores. Envío gratis desde €59. 14 días de devolución."
-    }
+      "name": "Usha Chest Rig — Bolso utilitario de piel PU",
+      "tagline": "Todo lo que necesitas, pegado al cuerpo. Sin cargar los bolsillos.",
+      "description": "El Usha Chest Rig es la respuesta elegante a \"¿dónde pongo mis cosas?\". Un chest rig de piel PU suave que lleva tu móvil, cartera, llaves y powerbank — sin que lo notes. Arnés cruzado ajustable que queda igual de bien sobre una sudadera que sobre un blazer. Menos desorden. Más estilo.",
+      "featuresHeading": "Qué incluye",
+      "features": [
+        "2 bolsillos + compartimento con cremallera para guardar con orden",
+        "Arnés cruzado ajustable — se adapta a la mayoría de cuerpos",
+        "Piel PU (vegana) suave y resistente con cremalleras metálicas",
+        "Se mantiene firme al moverte — para la ciudad, viajes y festivales",
+        "Llega en una bolsa de tela Usha"
+      ],
+      "includesHeading": "En la caja",
+      "includes": [
+        "Usha Chest Rig en el color elegido",
+        "Bolsa de tela Usha (dust bag)"
+      ],
+      "specsHeading": "Especificaciones",
+      "specs": {
+        "material": {
+          "label": "Material",
+          "value": "Piel PU (vegana), detalles metálicos"
+        },
+        "size": {
+          "label": "Medidas",
+          "value": "aprox. 22 × 18 cm · arnés ajustable hasta ~120 cm"
+        },
+        "weight": {
+          "label": "Peso",
+          "value": "aprox. 300 g"
+        },
+        "fits": {
+          "label": "Cabe",
+          "value": "Móvil de hasta 6,7\", cartera, llaves, powerbank, pasaporte"
+        }
+      },
+      "materialNote": "Piel vegana (PU) — no es piel auténtica.",
+      "colorsLabel": "Color",
+      "colorNames": {
+        "brown": "Marrón",
+        "olive": "Verde oliva",
+        "black": "Negro",
+        "tan": "Marrón claro",
+        "winered": "Rojo vino",
+        "emerald": "Verde esmeralda",
+        "yellow": "Amarillo",
+        "pink": "Rosa"
+      },
+      "quantityLabel": "Cantidad",
+      "cta": "Añadir al carrito",
+      "ctaLoading": "Abriendo el pago…",
+      "freeShipping": "Envío gratis a partir de {threshold}",
+      "checkoutError": "Algo salió mal en el pago. Inténtalo de nuevo.",
+      "trustSecure": "Pago seguro",
+      "trustShipping": "Envío con seguimiento",
+      "trustReturns": "14 días de devolución",
+      "seo": {
+        "title": "Usha Chest Rig – Bolso utilitario de piel PU | Usha Shop",
+        "description": "Chest rig de piel PU para móvil, cartera y llaves. Disponible en 8 colores. Envío gratis desde €59. 14 días de devolución."
+      }
     },
     "usha-belt-bag": {
       "name": "Usha Belt Bag — Cinturón de cintura en piel PU",
@@ -71,17 +92,37 @@
         "Compacto: ~20 × 10 × 5 cm"
       ],
       "includesHeading": "En la caja",
-      "includes": ["Usha Belt Bag en el color elegido (cinturón + bolsillo)"],
+      "includes": [
+        "Usha Belt Bag en el color elegido (cinturón + bolsillo)"
+      ],
       "specsHeading": "Especificaciones",
       "specs": {
-        "material": { "label": "Material", "value": "Piel PU (piel vegana), herrajes de metal" },
-        "size": { "label": "Medidas", "value": "correa regulable · bolso ~20 × 10 × 5 cm" },
-        "weight": { "label": "Peso", "value": "aprox. 160 g" },
-        "fits": { "label": "Cabe", "value": "Móvil, tarjetas, llaves, pintalabios, efectivo" }
+        "material": {
+          "label": "Material",
+          "value": "Piel PU (piel vegana), herrajes de metal"
+        },
+        "size": {
+          "label": "Medidas",
+          "value": "correa regulable · bolso ~20 × 10 × 5 cm"
+        },
+        "weight": {
+          "label": "Peso",
+          "value": "aprox. 160 g"
+        },
+        "fits": {
+          "label": "Cabe",
+          "value": "Móvil, tarjetas, llaves, pintalabios, efectivo"
+        }
       },
       "materialNote": "Piel PU (piel vegana) — no es piel auténtica.",
       "colorsLabel": "Color",
-      "colorNames": { "black": "Negro", "cream": "Crema", "pink": "Rosa", "grey": "Gris", "nude": "Nude" },
+      "colorNames": {
+        "black": "Negro",
+        "cream": "Crema",
+        "pink": "Rosa",
+        "grey": "Gris",
+        "nude": "Nude"
+      },
       "quantityLabel": "Cantidad",
       "cta": "Añadir al carrito",
       "ctaLoading": "Abriendo el pago…",
@@ -104,9 +145,21 @@
     "heading": "Lo que dicen los clientes",
     "placeholderNote": "Las reseñas reales aparecerán aquí cuando lleguen los primeros pedidos.",
     "items": [
-      { "name": "Cliente", "rating": 5, "text": "Queda perfecto sobre la sudadera y cabe todo lo que suelo perder. Más bonito de lo que esperaba." },
-      { "name": "Cliente", "rating": 5, "text": "Muy buena calidad en la piel y las cremalleras. Siempre me preguntan dónde lo compré." },
-      { "name": "Cliente", "rating": 4, "text": "El tamaño justo para un festival — móvil, powerbank y llaves sin estorbar." }
+      {
+        "name": "Cliente",
+        "rating": 5,
+        "text": "Queda perfecto sobre la sudadera y cabe todo lo que suelo perder. Más bonito de lo que esperaba."
+      },
+      {
+        "name": "Cliente",
+        "rating": 5,
+        "text": "Muy buena calidad en la piel y las cremalleras. Siempre me preguntan dónde lo compré."
+      },
+      {
+        "name": "Cliente",
+        "rating": 4,
+        "text": "El tamaño justo para un festival — móvil, powerbank y llaves sin estorbar."
+      }
     ]
   },
   "follow": {
@@ -125,7 +178,9 @@
     "cancelTitle": "Pago cancelado",
     "cancelBody": "No se realizó ningún cargo. Tu selección sigue aquí — puedes completar la compra cuando quieras.",
     "backToProduct": "Volver al producto",
-    "continueShopping": "Seguir comprando"
+    "continueShopping": "Seguir comprando",
+    "pendingTitle": "Procesando el pago",
+    "pendingBody": "Aún no hemos confirmado tu pago. Si acabas de pagar, puede tardar un momento; si no, contáctanos."
   },
   "footer": {
     "companyLine": "Usha AB · N.º de reg. 559401-8326",
@@ -143,7 +198,7 @@
     "backToShop": "Volver a la tienda",
     "terms": {
       "title": "Condiciones de compra",
-      "body": "Estas condiciones se aplican a las compras en Usha Shop (shop.usha.se), gestionada por Usha AB (n.º de reg. 559401-8326). Los precios se muestran con IVA incluido. El pedido es vinculante una vez confirmado el pago. Nos reservamos el derecho de rechazar o cancelar un pedido en caso de errores evidentes de precio o stock. El pago se procesa de forma segura a través de Stripe (tarjeta, Klarna, Swish, Apple Pay, Google Pay). Escríbenos a pablo.acosta@usha.se para cualquier duda sobre tu pedido."
+      "body": "Estas condiciones se aplican a las compras en Usha Shop (shop.usha.se), gestionada por Usha AB (n.º de reg. 559401-8326). Los precios se muestran en EUR con IVA incluido. El pedido es vinculante una vez confirmado el pago. Nos reservamos el derecho de rechazar o cancelar un pedido en caso de errores evidentes de precio o stock. El pago se procesa de forma segura a través de Stripe (tarjeta, Klarna, Swish, Apple Pay, Google Pay). Escríbenos a pablo.acosta@usha.se para cualquier duda sobre tu pedido."
     },
     "privacy": {
       "title": "Política de privacidad",

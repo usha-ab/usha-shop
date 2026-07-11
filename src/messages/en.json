@@ -19,44 +19,65 @@
   },
   "products": {
     "usha-chest-rig": {
-    "name": "Usha Chest Rig — PU Leather Utility Bag",
-    "tagline": "Everything you need, close to you. Nothing weighing down your pockets.",
-    "description": "The Usha Chest Rig is the clean answer to \"where do I put my stuff?\" A soft PU leather chest rig that carries your phone, wallet, keys and power bank — without you feeling it. An adjustable cross-strap that sits just as well over a hoodie as a blazer. Less clutter. More class.",
-    "featuresHeading": "What you get",
-    "features": [
-      "2 pockets + zip compartment for smart storage",
-      "Adjustable cross-strap — fits most body types",
-      "Soft, durable PU (vegan) leather with metal zippers",
-      "Stays put when you move — made for the city, travel, festivals",
-      "Arrives in an Usha dust bag"
-    ],
-    "includesHeading": "In the box",
-    "includes": [
-      "Usha Chest Rig in your chosen colour",
-      "Usha dust bag"
-    ],
-    "specsHeading": "Specs",
-    "specs": {
-      "material": { "label": "Material", "value": "PU (vegan) leather, metal hardware" },
-      "size": { "label": "Size", "value": "approx. 22 × 18 cm · strap adjustable up to ~120 cm" },
-      "weight": { "label": "Weight", "value": "approx. 300 g" },
-      "fits": { "label": "Fits", "value": "Phones up to 6.7\", wallet, keys, power bank, passport" }
-    },
-    "materialNote": "Vegan leather (PU) — not genuine leather.",
-    "colorsLabel": "Colour",
-    "colorNames": { "brown": "Brown", "olive": "Olive", "black": "Black", "tan": "Tan", "winered": "Wine red", "emerald": "Emerald green", "yellow": "Yellow", "pink": "Pink" },
-    "quantityLabel": "Quantity",
-    "cta": "Add to cart",
-    "ctaLoading": "Opening checkout…",
-    "freeShipping": "Free shipping over {threshold}",
-    "checkoutError": "Something went wrong at checkout. Please try again.",
-    "trustSecure": "Secure payment",
-    "trustShipping": "Tracked shipping",
-    "trustReturns": "14-day returns",
-    "seo": {
-      "title": "Usha Chest Rig – PU Leather Utility Bag | Usha Shop",
-      "description": "Clean PU leather chest rig for phone, wallet & keys. Available in 8 colours. Free shipping over €59. 14-day returns."
-    }
+      "name": "Usha Chest Rig — PU Leather Utility Bag",
+      "tagline": "Everything you need, close to you. Nothing weighing down your pockets.",
+      "description": "The Usha Chest Rig is the clean answer to \"where do I put my stuff?\" A soft PU leather chest rig that carries your phone, wallet, keys and power bank — without you feeling it. An adjustable cross-strap that sits just as well over a hoodie as a blazer. Less clutter. More class.",
+      "featuresHeading": "What you get",
+      "features": [
+        "2 pockets + zip compartment for smart storage",
+        "Adjustable cross-strap — fits most body types",
+        "Soft, durable PU (vegan) leather with metal zippers",
+        "Stays put when you move — made for the city, travel, festivals",
+        "Arrives in an Usha dust bag"
+      ],
+      "includesHeading": "In the box",
+      "includes": [
+        "Usha Chest Rig in your chosen colour",
+        "Usha dust bag"
+      ],
+      "specsHeading": "Specs",
+      "specs": {
+        "material": {
+          "label": "Material",
+          "value": "PU (vegan) leather, metal hardware"
+        },
+        "size": {
+          "label": "Size",
+          "value": "approx. 22 × 18 cm · strap adjustable up to ~120 cm"
+        },
+        "weight": {
+          "label": "Weight",
+          "value": "approx. 300 g"
+        },
+        "fits": {
+          "label": "Fits",
+          "value": "Phones up to 6.7\", wallet, keys, power bank, passport"
+        }
+      },
+      "materialNote": "Vegan leather (PU) — not genuine leather.",
+      "colorsLabel": "Colour",
+      "colorNames": {
+        "brown": "Brown",
+        "olive": "Olive",
+        "black": "Black",
+        "tan": "Tan",
+        "winered": "Wine red",
+        "emerald": "Emerald green",
+        "yellow": "Yellow",
+        "pink": "Pink"
+      },
+      "quantityLabel": "Quantity",
+      "cta": "Add to cart",
+      "ctaLoading": "Opening checkout…",
+      "freeShipping": "Free shipping over {threshold}",
+      "checkoutError": "Something went wrong at checkout. Please try again.",
+      "trustSecure": "Secure payment",
+      "trustShipping": "Tracked shipping",
+      "trustReturns": "14-day returns",
+      "seo": {
+        "title": "Usha Chest Rig – PU Leather Utility Bag | Usha Shop",
+        "description": "Clean PU leather chest rig for phone, wallet & keys. Available in 8 colours. Free shipping over €59. 14-day returns."
+      }
     },
     "usha-belt-bag": {
       "name": "Usha Belt Bag — PU Leather Waist Belt",
@@ -71,17 +92,37 @@
         "Compact: ~20 × 10 × 5 cm"
       ],
       "includesHeading": "In the box",
-      "includes": ["Usha Belt Bag in your chosen colour (belt + pouch)"],
+      "includes": [
+        "Usha Belt Bag in your chosen colour (belt + pouch)"
+      ],
       "specsHeading": "Specs",
       "specs": {
-        "material": { "label": "Material", "value": "PU leather (vegan leather), metal hardware" },
-        "size": { "label": "Size", "value": "adjustable strap · bag ~20 × 10 × 5 cm" },
-        "weight": { "label": "Weight", "value": "approx. 160 g" },
-        "fits": { "label": "Fits", "value": "Phone, cards, keys, lip balm, cash" }
+        "material": {
+          "label": "Material",
+          "value": "PU leather (vegan leather), metal hardware"
+        },
+        "size": {
+          "label": "Size",
+          "value": "adjustable strap · bag ~20 × 10 × 5 cm"
+        },
+        "weight": {
+          "label": "Weight",
+          "value": "approx. 160 g"
+        },
+        "fits": {
+          "label": "Fits",
+          "value": "Phone, cards, keys, lip balm, cash"
+        }
       },
       "materialNote": "PU leather (vegan leather) — not genuine leather.",
       "colorsLabel": "Colour",
-      "colorNames": { "black": "Black", "cream": "Cream", "pink": "Pink", "grey": "Grey", "nude": "Nude" },
+      "colorNames": {
+        "black": "Black",
+        "cream": "Cream",
+        "pink": "Pink",
+        "grey": "Grey",
+        "nude": "Nude"
+      },
       "quantityLabel": "Quantity",
       "cta": "Add to cart",
       "ctaLoading": "Opening checkout…",
@@ -104,9 +145,21 @@
     "heading": "What customers say",
     "placeholderNote": "Real reviews will appear here once the first orders land.",
     "items": [
-      { "name": "Customer", "rating": 5, "text": "Sits perfectly over a hoodie and holds everything I usually lose. Better looking than I expected." },
-      { "name": "Customer", "rating": 5, "text": "Great quality on the leather and the zippers. I get asked where I got it all the time." },
-      { "name": "Customer", "rating": 4, "text": "Just the right size for a festival — phone, power bank and keys without getting in the way." }
+      {
+        "name": "Customer",
+        "rating": 5,
+        "text": "Sits perfectly over a hoodie and holds everything I usually lose. Better looking than I expected."
+      },
+      {
+        "name": "Customer",
+        "rating": 5,
+        "text": "Great quality on the leather and the zippers. I get asked where I got it all the time."
+      },
+      {
+        "name": "Customer",
+        "rating": 4,
+        "text": "Just the right size for a festival — phone, power bank and keys without getting in the way."
+      }
     ]
   },
   "follow": {
@@ -125,7 +178,9 @@
     "cancelTitle": "Checkout cancelled",
     "cancelBody": "No payment was taken. Your selection is still here — you can complete the purchase whenever you like.",
     "backToProduct": "Back to the product",
-    "continueShopping": "Continue shopping"
+    "continueShopping": "Continue shopping",
+    "pendingTitle": "Payment processing",
+    "pendingBody": "We haven’t confirmed your payment yet. If you just paid it may take a moment — otherwise, get in touch."
   },
   "footer": {
     "companyLine": "Usha AB · Reg. no. 559401-8326",
@@ -143,7 +198,7 @@
     "backToShop": "Back to the shop",
     "terms": {
       "title": "Terms of purchase",
-      "body": "These terms apply to purchases from Usha Shop (shop.usha.se), operated by Usha AB (reg. no. 559401-8326). Prices are shown including VAT. Your order is binding once payment is confirmed. We reserve the right to decline or cancel an order in the event of obvious pricing or stock errors. Payment is handled securely by Stripe (card, Klarna, Swish, Apple Pay, Google Pay). Contact us at pablo.acosta@usha.se with any questions about your order."
+      "body": "These terms apply to purchases from Usha Shop (shop.usha.se), operated by Usha AB (reg. no. 559401-8326). Prices are shown in EUR including VAT. Your order is binding once payment is confirmed. We reserve the right to decline or cancel an order in the event of obvious pricing or stock errors. Payment is handled securely by Stripe (card, Klarna, Swish, Apple Pay, Google Pay). Contact us at pablo.acosta@usha.se with any questions about your order."
     },
     "privacy": {
       "title": "Privacy policy",

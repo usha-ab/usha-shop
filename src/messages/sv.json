@@ -19,44 +19,65 @@
   },
   "products": {
     "usha-chest-rig": {
-    "name": "Usha Chest Rig — Utility-väska i PU-läder",
-    "tagline": "Allt du behöver, nära kroppen. Inget skräp i fickorna.",
-    "description": "Usha Chest Rig är den snygga lösningen på \"var lägger jag grejerna?\". En chest rig i mjukt PU-läder som bär telefon, plånbok, nycklar och powerbank – utan att du känner av det. Justerbar kryss-sele som sitter lika bra över en hoodie som en kavaj. Mindre stök. Mer stil.",
-    "featuresHeading": "Detta får du",
-    "features": [
-      "2 fickor + dragkedjefack för smart förvaring",
-      "Justerbar kryss-sele – passar de flesta kroppar",
-      "Mjukt, tåligt PU-läder (veganläder) med metalldragkedjor",
-      "Sitter stadigt när du rör dig – perfekt för stan, resan, festivalen",
-      "Levereras i en Usha-tygpåse"
-    ],
-    "includesHeading": "I lådan",
-    "includes": [
-      "Usha Chest Rig i vald färg",
-      "Usha-tygpåse (dust bag)"
-    ],
-    "specsHeading": "Specifikation",
-    "specs": {
-      "material": { "label": "Material", "value": "PU-läder (veganläder), metalldetaljer" },
-      "size": { "label": "Mått", "value": "ca 22 × 18 cm · selelängd justerbar upp till ~120 cm" },
-      "weight": { "label": "Vikt", "value": "ca 300 g" },
-      "fits": { "label": "Rymmer", "value": "Telefon upp till 6,7\", plånbok, nycklar, powerbank, pass" }
-    },
-    "materialNote": "Veganläder (PU) – inte äkta läder.",
-    "colorsLabel": "Färg",
-    "colorNames": { "brown": "Brun", "olive": "Oliv", "black": "Svart", "tan": "Ljusbrun", "winered": "Vinröd", "emerald": "Smaragdgrön", "yellow": "Gul", "pink": "Rosa" },
-    "quantityLabel": "Antal",
-    "cta": "Lägg i varukorg",
-    "ctaLoading": "Öppnar kassan…",
-    "freeShipping": "Fri frakt över {threshold}",
-    "checkoutError": "Något gick fel med kassan. Försök igen.",
-    "trustSecure": "Säker betalning",
-    "trustShipping": "Spårbar frakt",
-    "trustReturns": "14 dagars ångerrätt",
-    "seo": {
-      "title": "Usha Chest Rig – Utility-bröstväska i PU-läder | Usha Shop",
-      "description": "Snygg chest rig i PU-läder för telefon, plånbok & nycklar. Finns i 8 färger. Fri frakt över 600 kr. 14 dagars ångerrätt."
-    }
+      "name": "Usha Chest Rig — Utility-väska i PU-läder",
+      "tagline": "Allt du behöver, nära kroppen. Inget skräp i fickorna.",
+      "description": "Usha Chest Rig är den snygga lösningen på \"var lägger jag grejerna?\". En chest rig i mjukt PU-läder som bär telefon, plånbok, nycklar och powerbank – utan att du känner av det. Justerbar kryss-sele som sitter lika bra över en hoodie som en kavaj. Mindre stök. Mer stil.",
+      "featuresHeading": "Detta får du",
+      "features": [
+        "2 fickor + dragkedjefack för smart förvaring",
+        "Justerbar kryss-sele – passar de flesta kroppar",
+        "Mjukt, tåligt PU-läder (veganläder) med metalldragkedjor",
+        "Sitter stadigt när du rör dig – perfekt för stan, resan, festivalen",
+        "Levereras i en Usha-tygpåse"
+      ],
+      "includesHeading": "I lådan",
+      "includes": [
+        "Usha Chest Rig i vald färg",
+        "Usha-tygpåse (dust bag)"
+      ],
+      "specsHeading": "Specifikation",
+      "specs": {
+        "material": {
+          "label": "Material",
+          "value": "PU-läder (veganläder), metalldetaljer"
+        },
+        "size": {
+          "label": "Mått",
+          "value": "ca 22 × 18 cm · selelängd justerbar upp till ~120 cm"
+        },
+        "weight": {
+          "label": "Vikt",
+          "value": "ca 300 g"
+        },
+        "fits": {
+          "label": "Rymmer",
+          "value": "Telefon upp till 6,7\", plånbok, nycklar, powerbank, pass"
+        }
+      },
+      "materialNote": "Veganläder (PU) – inte äkta läder.",
+      "colorsLabel": "Färg",
+      "colorNames": {
+        "brown": "Brun",
+        "olive": "Oliv",
+        "black": "Svart",
+        "tan": "Ljusbrun",
+        "winered": "Vinröd",
+        "emerald": "Smaragdgrön",
+        "yellow": "Gul",
+        "pink": "Rosa"
+      },
+      "quantityLabel": "Antal",
+      "cta": "Lägg i varukorg",
+      "ctaLoading": "Öppnar kassan…",
+      "freeShipping": "Fri frakt över {threshold}",
+      "checkoutError": "Något gick fel med kassan. Försök igen.",
+      "trustSecure": "Säker betalning",
+      "trustShipping": "Spårbar frakt",
+      "trustReturns": "14 dagars ångerrätt",
+      "seo": {
+        "title": "Usha Chest Rig – Utility-bröstväska i PU-läder | Usha Shop",
+        "description": "Snygg chest rig i PU-läder för telefon, plånbok & nycklar. Finns i 8 färger. Fri frakt över 600 kr. 14 dagars ångerrätt."
+      }
     },
     "usha-belt-bag": {
       "name": "Usha Belt Bag — Midjebälte i PU-läder",
@@ -71,17 +92,37 @@
         "Kompakt: ~20 × 10 × 5 cm"
       ],
       "includesHeading": "I lådan",
-      "includes": ["Usha Belt Bag i vald färg (bälte + ficka)"],
+      "includes": [
+        "Usha Belt Bag i vald färg (bälte + ficka)"
+      ],
       "specsHeading": "Specifikation",
       "specs": {
-        "material": { "label": "Material", "value": "PU-läder (veganläder), metalldetaljer" },
-        "size": { "label": "Mått", "value": "justerbar rem · väska ~20 × 10 × 5 cm" },
-        "weight": { "label": "Vikt", "value": "ca 160 g" },
-        "fits": { "label": "Rymmer", "value": "Telefon, kort, nycklar, läppstift, kontanter" }
+        "material": {
+          "label": "Material",
+          "value": "PU-läder (veganläder), metalldetaljer"
+        },
+        "size": {
+          "label": "Mått",
+          "value": "justerbar rem · väska ~20 × 10 × 5 cm"
+        },
+        "weight": {
+          "label": "Vikt",
+          "value": "ca 160 g"
+        },
+        "fits": {
+          "label": "Rymmer",
+          "value": "Telefon, kort, nycklar, läppstift, kontanter"
+        }
       },
       "materialNote": "PU-läder (veganläder) – inte äkta läder.",
       "colorsLabel": "Färg",
-      "colorNames": { "black": "Svart", "cream": "Creme", "pink": "Rosa", "grey": "Grå", "nude": "Nude" },
+      "colorNames": {
+        "black": "Svart",
+        "cream": "Creme",
+        "pink": "Rosa",
+        "grey": "Grå",
+        "nude": "Nude"
+      },
       "quantityLabel": "Antal",
       "cta": "Lägg i varukorg",
       "ctaLoading": "Öppnar kassan…",
@@ -104,9 +145,21 @@
     "heading": "Vad kunder säger",
     "placeholderNote": "Riktiga omdömen visas här när de första beställningarna kommit in.",
     "items": [
-      { "name": "Kund", "rating": 5, "text": "Sitter perfekt över hoodien och rymmer allt jag brukar tappa bort. Snyggare än väntat." },
-      { "name": "Kund", "rating": 5, "text": "Bra kvalitet på lädret och dragkedjorna. Får många frågor om var jag köpt den." },
-      { "name": "Kund", "rating": 4, "text": "Precis lagom stor för festival – telefon, powerbank och nycklar utan att kännas i vägen." }
+      {
+        "name": "Kund",
+        "rating": 5,
+        "text": "Sitter perfekt över hoodien och rymmer allt jag brukar tappa bort. Snyggare än väntat."
+      },
+      {
+        "name": "Kund",
+        "rating": 5,
+        "text": "Bra kvalitet på lädret och dragkedjorna. Får många frågor om var jag köpt den."
+      },
+      {
+        "name": "Kund",
+        "rating": 4,
+        "text": "Precis lagom stor för festival – telefon, powerbank och nycklar utan att kännas i vägen."
+      }
     ]
   },
   "follow": {
@@ -125,7 +178,9 @@
     "cancelTitle": "Köpet avbröts",
     "cancelBody": "Ingen betalning genomfördes. Din varukorg finns kvar – du kan slutföra köpet när du vill.",
     "backToProduct": "Tillbaka till produkten",
-    "continueShopping": "Fortsätt handla"
+    "continueShopping": "Fortsätt handla",
+    "pendingTitle": "Betalningen behandlas",
+    "pendingBody": "Vi har inte bekräftat din betalning ännu. Har du precis betalat kan det ta en liten stund — annars, hör av dig till oss."
   },
   "footer": {
     "companyLine": "Usha AB · Org.nr 559401-8326",
