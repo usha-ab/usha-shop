@@ -3,6 +3,7 @@ import type Stripe from "stripe";
 import { getStripe } from "@/lib/stripe";
 import { getProduct, cjVidForColor } from "@/lib/product";
 import { isCjConfigured, createCjOrder, type CjShippingAddress } from "@/lib/cj";
+import { claimStripeEvent, releaseStripeEvent } from "@/lib/idempotency";
 
 export const runtime = "nodejs";
 
@@ -118,6 +119,15 @@ export async function POST(req: Request) {
     const session = event.data.object as Stripe.Checkout.Session;
 
     if (session.payment_status === "paid") {
+      // Idempotency: claim this event before any fulfilment side effect. A
+      // redelivery of an already-processed event is acknowledged with 200 and
+      // skipped, so Stripe's at-least-once retries can't place duplicate orders.
+      const isNew = await claimStripeEvent(event.id, session.id);
+      if (!isNew) {
+        console.log(`[webhook] event ${event.id} already processed — skipping`);
+        return NextResponse.json({ received: true, duplicate: true });
+      }
+
       const order: FulfillmentOrder = {
         stripeSessionId: session.id,
         email: session.customer_details?.email ?? session.customer_email ?? "",
@@ -133,7 +143,9 @@ export async function POST(req: Request) {
       try {
         await forwardToSupplier(order);
       } catch (err) {
-        // Return 500 so Stripe retries delivery rather than dropping the order.
+        // Release the claim so Stripe's retry re-processes it (CJ dedupes on
+        // orderNumber = session.id as a second layer). Return 500 to trigger retry.
+        await releaseStripeEvent(event.id);
         console.error("[webhook] forwardToSupplier failed:", err);
         return NextResponse.json({ error: "fulfillment_failed" }, { status: 500 });
       }
