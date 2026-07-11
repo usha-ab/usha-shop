@@ -9,7 +9,8 @@
     "signedInAs": "Sesión iniciada como {name}"
   },
   "member": {
-    "discountBanner": "Tu descuento de socio del −{percent}% se aplica al finalizar la compra"
+    "discountBanner": "Tu descuento de socio del −{percent}% se aplica al finalizar la compra",
+    "joinForDiscount": "Hazte miembro en Usha y consigue hasta un {percent}% de descuento →"
   },
   "catalog": {
     "heading": "Usha Shop",

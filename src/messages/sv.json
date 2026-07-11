@@ -9,7 +9,8 @@
     "signedInAs": "Inloggad som {name}"
   },
   "member": {
-    "discountBanner": "Din medlemsrabatt −{percent}% dras automatiskt i kassan"
+    "discountBanner": "Din medlemsrabatt −{percent}% dras automatiskt i kassan",
+    "joinForDiscount": "Bli medlem på Usha och få upp till {percent}% rabatt →"
   },
   "catalog": {
     "heading": "Usha Shop",
