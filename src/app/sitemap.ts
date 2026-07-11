@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
-import { PRODUCTS } from "@/lib/product";
+import { PUBLISHED_PRODUCTS } from "@/lib/product";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shop.usha.se";
 
@@ -14,7 +14,7 @@ function url(locale: string, path: string) {
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = [
     "",
-    ...PRODUCTS.map((p) => `/${p.slug}`),
+    ...PUBLISHED_PRODUCTS.map((p) => `/${p.slug}`),
     "/terms",
     "/privacy",
     "/returns",

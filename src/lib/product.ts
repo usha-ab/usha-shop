@@ -34,6 +34,11 @@ export interface Product {
   colors: ProductColor[];
   /** Shared gallery shots. gallery[0] = lifestyle hero (shown first). */
   gallery: string[];
+  /** Only published products are shown in the catalog, reachable by URL,
+   *  listed in the sitemap, and buyable. Flip to true ONLY when the product is
+   *  fully sourced (CJ offer accepted, cjVid + real photos in) and sellable
+   *  end-to-end like the chest rig. */
+  published: boolean;
 }
 
 // --- Shipping (shared across products) ---------------------------------------
@@ -48,6 +53,7 @@ export const PRODUCTS: Product[] = [
     slug: "usha-chest-rig",
     sku: "USHA-CR-001",
     brand: "Usha",
+    published: true,
     price: { sek: { amount: 39900, display: "399 kr" }, eur: { amount: 3500, display: "€35" } },
     colors: [
       { id: "brown", swatch: "#6b4a2b", image: "/images/chest-rig-brown.jpg", cjVid: "2509230333571627700" },
@@ -65,6 +71,7 @@ export const PRODUCTS: Product[] = [
     slug: "usha-belt-bag",
     sku: "USHA-BB-001",
     brand: "Usha",
+    published: false,
     // Slim PU leather belt bag, pin buckle, snap-flap pouch (AliExpress ref 1005008516610559).
     // Interim placeholder photos + empty cjVid — swapped when CJ sourcing lands.
     price: { sek: { amount: 34900, display: "349 kr" }, eur: { amount: 3200, display: "€32" } },
@@ -80,8 +87,19 @@ export const PRODUCTS: Product[] = [
 ];
 
 // --- Helpers -----------------------------------------------------------------
+
+/** Catalog, storefront routes, sitemap and checkout all use this — never the
+ *  raw PRODUCTS list — so unpublished (not-yet-sellable) products stay hidden. */
+export const PUBLISHED_PRODUCTS: Product[] = PRODUCTS.filter((p) => p.published);
+
 export function getProduct(slug: string): Product | undefined {
   return PRODUCTS.find((p) => p.slug === slug);
+}
+
+/** Like getProduct but only returns the product if it's published — use for
+ *  anything public-facing (page render, checkout) so hidden products 404 / reject. */
+export function getPublishedProduct(slug: string): Product | undefined {
+  return PUBLISHED_PRODUCTS.find((p) => p.slug === slug);
 }
 
 /** Swedish shoppers pay in SEK; English/Spanish default to EUR. */

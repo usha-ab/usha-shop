@@ -1,7 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { PRODUCTS, currencyForLocale, galleryFor } from "@/lib/product";
+import { PUBLISHED_PRODUCTS, currencyForLocale, galleryFor } from "@/lib/product";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -15,7 +15,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   const currency = currencyForLocale(locale);
 
   const cards = await Promise.all(
-    PRODUCTS.map(async (p) => {
+    PUBLISHED_PRODUCTS.map(async (p) => {
       const t = await getTranslations({ locale, namespace: `products.${p.slug}` });
       return {
         slug: p.slug,

@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getTranslations } from "next-intl/server";
 import { getStripe, getMemberDiscountCoupon } from "@/lib/stripe";
-import { getProduct, currencyForLocale, SHIPPING } from "@/lib/product";
+import { getPublishedProduct, currencyForLocale, SHIPPING } from "@/lib/product";
 import { routing } from "@/i18n/routing";
 import { getPlatformUser } from "@/lib/platform-session";
 import { memberDiscountPercent } from "@/lib/member-discount";
@@ -33,8 +33,9 @@ export async function POST(req: Request) {
 
   const { slug, colorId, quantity, locale } = body;
 
-  // --- validate ---
-  const product = getProduct(slug ?? "");
+  // --- validate --- (getPublishedProduct so unpublished/not-yet-sellable
+  // products can't be bought even via a hand-crafted request)
+  const product = getPublishedProduct(slug ?? "");
   if (!product) {
     return NextResponse.json({ error: "invalid_product" }, { status: 400 });
   }
