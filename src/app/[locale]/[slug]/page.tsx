@@ -4,8 +4,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { routing } from "@/i18n/routing";
 import {
-  PRODUCTS,
-  getProduct,
+  PUBLISHED_PRODUCTS,
+  getPublishedProduct,
   currencyForLocale,
   SHIPPING,
   type Product,
@@ -19,7 +19,7 @@ import { CheckIcon } from "@/components/icons";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://shop.usha.se";
 
 export function generateStaticParams() {
-  return routing.locales.flatMap((locale) => PRODUCTS.map((p) => ({ locale, slug: p.slug })));
+  return routing.locales.flatMap((locale) => PUBLISHED_PRODUCTS.map((p) => ({ locale, slug: p.slug })));
 }
 
 export async function generateMetadata({
@@ -28,7 +28,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
-  const product = getProduct(slug);
+  const product = getPublishedProduct(slug);
   if (!product) return {};
   const t = await getTranslations({ locale, namespace: `products.${slug}.seo` });
   return {
@@ -138,7 +138,7 @@ export default async function ProductPage({
   params: Promise<{ locale: string; slug: string }>;
 }) {
   const { locale, slug } = await params;
-  const product = getProduct(slug);
+  const product = getPublishedProduct(slug);
   if (!product) notFound();
   setRequestLocale(locale);
 
