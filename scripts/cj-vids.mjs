@@ -38,10 +38,15 @@ if (!token) {
 const query = (url) =>
   fetch(url, { headers: { "CJ-Access-Token": token } }).then((r) => r.json());
 
-let res = await query(`${BASE}/product/query?pid=${encodeURIComponent(PID)}`);
+// Prefer the SKU query when CJ_SKU is explicitly given without CJ_PID —
+// otherwise the default chest-rig PID wins and returns the wrong product.
+const preferSku = !!process.env.CJ_SKU && !process.env.CJ_PID;
+const byPid = () => query(`${BASE}/product/query?pid=${encodeURIComponent(PID)}`);
+const bySku = () => query(`${BASE}/product/query?productSku=${encodeURIComponent(SKU)}`);
+let res = await (preferSku ? bySku() : byPid());
 let variants = res?.data?.variants;
 if (!variants || !variants.length) {
-  res = await query(`${BASE}/product/query?productSku=${encodeURIComponent(SKU)}`);
+  res = await (preferSku ? byPid() : bySku());
   variants = res?.data?.variants;
 }
 
