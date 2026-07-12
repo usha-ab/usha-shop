@@ -54,7 +54,7 @@ export const PRODUCTS: Product[] = [
     sku: "USHA-CR-001",
     brand: "Usha",
     published: true,
-    price: { sek: { amount: 39900, display: "399 kr" }, eur: { amount: 3500, display: "€35" } },
+    price: { sek: { amount: 34900, display: "349 kr" }, eur: { amount: 3100, display: "€31" } },
     colors: [
       { id: "brown", swatch: "#6b4a2b", image: "/images/chest-rig-brown.jpg", cjVid: "2509230333571627700" },
       { id: "olive", swatch: "#4b5320", image: "/images/chest-rig-olive.jpg", cjVid: "2509230333571627800" },
@@ -74,7 +74,7 @@ export const PRODUCTS: Product[] = [
     published: true,
     // Slim PU leather belt bag, pin buckle, snap-flap pouch. Sourced from CJ
     // SPU CJYD2980971 ($1.55). Real CJ colour photos + VIDs live 2026-07-12.
-    price: { sek: { amount: 34900, display: "349 kr" }, eur: { amount: 3200, display: "€32" } },
+    price: { sek: { amount: 29900, display: "299 kr" }, eur: { amount: 2700, display: "€27" } },
     colors: [
       { id: "black", swatch: "#1a1a1a", image: "/images/belt-bag-black.jpg", cjVid: "2607120941261605000" },
       { id: "brown", swatch: "#b0764a", image: "/images/belt-bag-brown.jpg", cjVid: "2607120941261605800" },
