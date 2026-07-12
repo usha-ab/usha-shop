@@ -83,14 +83,14 @@
     "usha-belt-bag": {
       "name": "Usha Belt Bag — Midjebälte i PU-läder",
       "tagline": "Ett smalt bälte med ficka. Telefon, kort, nycklar — händerna fria.",
-      "description": "Usha Belt Bag gör bältet till din väska. Ett smalt bälte i PU-läder med en flik-ficka och pin-spänne. Bär det högt i midjan över klänningen eller jeansen – eller diagonalt över bröstet. Mindre väska. Mer look.",
+      "description": "Usha Belt Bag gör bältet till din väska. Ett smalt bälte i PU-läder med en flik-ficka och pin-spänne. Bär det högt i midjan över klänningen eller jeansen. Mindre väska. Mer look.",
       "featuresHeading": "Detta får du",
       "features": [
         "Smal bältesväska med flik-ficka",
         "Pin-spänne i guldton",
         "Mjukt PU-läder (veganläder)",
-        "Justerbar rem – bärs i midjan eller över bröstet",
-        "Kompakt: ~20 × 10 × 5 cm"
+        "Justerbar bältesrem ~105 cm",
+        "Liten flik-ficka för det viktigaste"
       ],
       "includesHeading": "I lådan",
       "includes": [
@@ -104,7 +104,7 @@
         },
         "size": {
           "label": "Mått",
-          "value": "justerbar rem · väska ~20 × 10 × 5 cm"
+          "value": "justerbar bältesrem ~105 cm"
         },
         "weight": {
           "label": "Vikt",
@@ -119,10 +119,10 @@
       "colorsLabel": "Färg",
       "colorNames": {
         "black": "Svart",
-        "cream": "Creme",
-        "pink": "Rosa",
-        "grey": "Grå",
-        "nude": "Nude"
+        "brown": "Ljusbrun",
+        "coffee": "Mörkbrun",
+        "khaki": "Beige",
+        "red": "Röd"
       },
       "quantityLabel": "Antal",
       "cta": "Lägg i varukorg",

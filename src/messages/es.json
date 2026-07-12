@@ -83,14 +83,14 @@
     "usha-belt-bag": {
       "name": "Usha Belt Bag — Cinturón de cintura en piel PU",
       "tagline": "Un cinturón fino con bolsillo. Móvil, tarjetas, llaves — manos libres.",
-      "description": "El Usha Belt Bag convierte el cinturón en tu bolso. Un cinturón fino de piel PU con un bolsillo de solapa y hebilla de pin. Llévalo alto en la cintura sobre un vestido o unos vaqueros — o cruzado en el pecho. Menos bolso. Más look.",
+      "description": "El Usha Belt Bag convierte el cinturón en tu bolso. Un cinturón fino de piel PU con un bolsillo de solapa y hebilla de pin. Llévalo alto en la cintura sobre un vestido o unos vaqueros. Menos bolso. Más look.",
       "featuresHeading": "Qué incluye",
       "features": [
         "Bolso de cinturón fino con bolsillo de solapa",
         "Hebilla de pin en tono dorado",
         "Piel PU suave (piel vegana)",
-        "Correa regulable — en la cintura o cruzada en el pecho",
-        "Compacto: ~20 × 10 × 5 cm"
+        "Correa de cinturón regulable ~105 cm",
+        "Bolsillo de solapa pequeño para lo esencial"
       ],
       "includesHeading": "En la caja",
       "includes": [
@@ -104,7 +104,7 @@
         },
         "size": {
           "label": "Medidas",
-          "value": "correa regulable · bolso ~20 × 10 × 5 cm"
+          "value": "correa de cinturón regulable ~105 cm"
         },
         "weight": {
           "label": "Peso",
@@ -119,10 +119,10 @@
       "colorsLabel": "Color",
       "colorNames": {
         "black": "Negro",
-        "cream": "Crema",
-        "pink": "Rosa",
-        "grey": "Gris",
-        "nude": "Nude"
+        "brown": "Marrón claro",
+        "coffee": "Café",
+        "khaki": "Beige",
+        "red": "Rojo"
       },
       "quantityLabel": "Cantidad",
       "cta": "Añadir al carrito",

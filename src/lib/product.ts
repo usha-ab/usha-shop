@@ -71,16 +71,16 @@ export const PRODUCTS: Product[] = [
     slug: "usha-belt-bag",
     sku: "USHA-BB-001",
     brand: "Usha",
-    published: false,
-    // Slim PU leather belt bag, pin buckle, snap-flap pouch (AliExpress ref 1005008516610559).
-    // Interim placeholder photos + empty cjVid — swapped when CJ sourcing lands.
+    published: true,
+    // Slim PU leather belt bag, pin buckle, snap-flap pouch. Sourced from CJ
+    // SPU CJYD2980971 ($1.55). Real CJ colour photos + VIDs live 2026-07-12.
     price: { sek: { amount: 34900, display: "349 kr" }, eur: { amount: 3200, display: "€32" } },
     colors: [
-      { id: "black", swatch: "#141414", image: "/images/belt-bag-placeholder.jpg", cjVid: "" },
-      { id: "cream", swatch: "#e8e2d6", image: "/images/belt-bag-placeholder.jpg", cjVid: "" },
-      { id: "pink", swatch: "#e3a9b4", image: "/images/belt-bag-placeholder.jpg", cjVid: "" },
-      { id: "grey", swatch: "#8f8b86", image: "/images/belt-bag-placeholder.jpg", cjVid: "" },
-      { id: "nude", swatch: "#d9b79c", image: "/images/belt-bag-placeholder.jpg", cjVid: "" },
+      { id: "black", swatch: "#1a1a1a", image: "/images/belt-bag-black.jpg", cjVid: "2607120941261605000" },
+      { id: "brown", swatch: "#b0764a", image: "/images/belt-bag-brown.jpg", cjVid: "2607120941261605800" },
+      { id: "coffee", swatch: "#5a4230", image: "/images/belt-bag-coffee.jpg", cjVid: "2607120941261605400" },
+      { id: "khaki", swatch: "#ddc9a8", image: "/images/belt-bag-khaki.jpg", cjVid: "2607120941261604600" },
+      { id: "red", swatch: "#cf3038", image: "/images/belt-bag-red.jpg", cjVid: "2607120941261604200" },
     ],
     gallery: [],
   },

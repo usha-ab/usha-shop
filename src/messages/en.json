@@ -83,14 +83,14 @@
     "usha-belt-bag": {
       "name": "Usha Belt Bag — PU Leather Waist Belt",
       "tagline": "A slim belt with a pouch. Phone, cards, keys — hands free.",
-      "description": "The Usha Belt Bag turns a belt into your bag. A slim PU-leather belt with a snap-flap pouch and a pin buckle. Wear it high on the waist over a dress or jeans — or across the chest. Less bag. More look.",
+      "description": "The Usha Belt Bag turns a belt into your bag. A slim PU-leather belt with a snap-flap pouch and a pin buckle. Wear it high on the waist over a dress or jeans. Less bag. More look.",
       "featuresHeading": "What you get",
       "features": [
         "Slim belt bag with a snap-flap pouch",
         "Gold-tone pin buckle",
         "Soft PU leather (vegan leather)",
-        "Adjustable strap — worn at the waist or across the chest",
-        "Compact: ~20 × 10 × 5 cm"
+        "Adjustable belt strap ~105 cm",
+        "Small snap-flap pouch for the essentials"
       ],
       "includesHeading": "In the box",
       "includes": [
@@ -104,7 +104,7 @@
         },
         "size": {
           "label": "Size",
-          "value": "adjustable strap · bag ~20 × 10 × 5 cm"
+          "value": "adjustable belt strap ~105 cm"
         },
         "weight": {
           "label": "Weight",
@@ -119,10 +119,10 @@
       "colorsLabel": "Colour",
       "colorNames": {
         "black": "Black",
-        "cream": "Cream",
-        "pink": "Pink",
-        "grey": "Grey",
-        "nude": "Nude"
+        "brown": "Tan",
+        "coffee": "Coffee",
+        "khaki": "Beige",
+        "red": "Red"
       },
       "quantityLabel": "Quantity",
       "cta": "Add to cart",
